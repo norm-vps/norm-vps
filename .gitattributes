@@ -1,0 +1,6 @@
+# Prefer branch changes for site content to reduce merge conflicts
+blog/**/index.html merge=ours
+blog/index.html merge=ours
+index.html merge=ours
+robots.txt merge=ours
+sitemap.xml merge=ours
