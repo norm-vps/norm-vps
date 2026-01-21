@@ -360,83 +360,24 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <!-- React and Babel -->
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
-    <script type="text/babel">
-      function VPNBrowserExtensionsPage() {
-        const [selected, setSelected] = React.useState(null);
-        const [result, setResult] = React.useState('');
-        const [stars, setStars] = React.useState(0);
-        const [bannerVisible, setBannerVisible] = React.useState(false);
-
-        // Handle exit intent
-        React.useEffect(() => {
-          const handleMouseLeave = (e) => {
-            // Show banner only if the pointer leaves the window at top
-            if (e.clientY <= 0) {
-              setBannerVisible(true);
-              document.removeEventListener('mouseleave', handleMouseLeave);
-            }
-          };
-          document.addEventListener('mouseleave', handleMouseLeave);
-          return () => {
-            document.removeEventListener('mouseleave', handleMouseLeave);
-          };
-        }, []);
-
-        const choices = ['Chrome', 'Яндекс.Браузер', 'Opera', 'Firefox'];
-        const handleChoice = (index) => {
-          setSelected(index);
-          // Determine recommendation based on choice
-          let message = '';
-          let reward = 0;
-          switch (index) {
-            case 0:
-              message = 'Для Chrome мы рекомендуем использовать приложения Норм VPN и VPNUS — они обеспечат полную защиту всего устройства.';
-              reward = 1;
-              break;
-            case 1:
-              message = 'Яндекс.Браузер имеет встроенный режим турбо, но для настоящей конфиденциальности установите Норм VPN или VPNUS.';
-              reward = 1;
-              break;
-            case 2:
-              message = 'Opera предлагает встроенный бесплатный VPN, однако скорость и безопасность ограничены. Выбирайте платные сервисы, такие как Норм VPN или VPNUS.';
-              reward = 1;
-              break;
-            case 3:
-              message = 'Firefox поддерживает множество расширений, но лучше установить полноценное приложение Норм VPN для максимальной защиты.';
-              reward = 1;
-              break;
-            default:
-              message = '';
-          }
-          setResult(message);
-          setStars(stars + reward);
-        };
-        return (
-          <>
-            <header>
-              <div className="container nav">
-                <div className="logo" style={{ fontWeight: 700, fontSize: '24px' }}>Норм&nbsp;VPN</div>
-                <nav className="nav-links">
+<header>
+              <div class="container nav">
+                <div class="logo" style="font-weight: 700; font-size: 24px">Норм&nbsp;VPN</div>
+                <nav class="nav-links">
                   <a href="/norm-vps/">Главная</a>
                   <a href="/norm-vps/blog/">Блог</a>
                 </nav>
                 <a
                   href="https://t.me/normwpn_bot?start=partner_228691787"
-                  className="cta-button"
+                  class="cta-button"
                 >
                   3 дня бесплатно
                 </a>
               </div>
             </header>
-            <main className="container">
-              {/* Hero */}
-              <section className="hero">
-                <div className="hero-text">
+            <main class="container">
+              <section class="hero">
+                <div class="hero-text">
                   <h1>VPN‑расширения для браузеров</h1>
                   <p>
                     Расширения VPN для Chrome, Яндекс.Браузера, Opera и Firefox позволяют
@@ -446,16 +387,16 @@
                     такого подхода и почему для полноценной защиты всё же лучше
                     установить отдельное приложение, например, Норм VPN.
                   </p>
-                  <div className="button-group">
+                  <div class="button-group">
                     <a
                       href="https://t.me/normwpn_bot?start=partner_228691787"
-                      className="service-btn norm-btn"
+                      class="service-btn norm-btn"
                     >
                       Попробовать Норм VPN
                     </a>
                     <a
                       href="https://t.me/vpnusvpn_bot?start=invite_246079"
-                      className="service-btn vpnus-btn"
+                      class="service-btn vpnus-btn"
                     >
                       Попробовать VPNUS
                     </a>
@@ -463,8 +404,7 @@
                 </div>
                 <img src="../../assets/hero2.png" alt="VPN расширение для браузера" />
               </section>
-              {/* Article content */}
-              <section className="article-content">
+              <section class="article-content">
                 <h2>Что такое VPN‑расширение?</h2>
                 <p>
                   VPN‑расширение — это небольшой плагин, который добавляется в
@@ -526,7 +466,7 @@
                   предлагают приложения, которые обеспечивают полную защиту,
                   поэтому расширения могут быть лишь дополнительным инструментом.
                 </p>
-                <table className="comparison-table">
+                <table class="comparison-table">
                   <thead>
                     <tr>
                       <th>Браузер</th>
@@ -567,27 +507,28 @@
                   Выберите свой браузер ниже и получите персональную рекомендацию.
                   За участие начисляется виртуальная «звезда» — соберите все!
                 </p>
-                <div className="quiz">
+                <div class="quiz">
                   <h3>Какой браузер вы используете чаще всего?</h3>
-                  {choices.map((choice, index) => (
-                    <button
-                      key={index}
-                      className={`choice-${index}`}
-                      onClick={() => handleChoice(index)}
-                    >
-                      {choice}
-                    </button>
-                  ))}
-                  {result && (
-                    <div className="quiz-result">
-                      <p>{result}</p>
-                      <p className="stars">{Array(stars).fill('★').join('')}</p>
-                    </div>
-                  )}
+                  <div class="quiz-options">
+                    <button type="button" class="choice-0">Chrome</button>
+                    <button type="button" class="choice-1">Яндекс.Браузер</button>
+                    <button type="button" class="choice-2">Opera</button>
+                    <button type="button" class="choice-3">Firefox</button>
+                  </div>
+                  <div class="quiz-result">
+                    <p>Рекомендации:</p>
+                    <ul>
+                      <li>Chrome: используйте приложения Норм VPN и VPNUS для полной защиты всего устройства.</li>
+                      <li>Яндекс.Браузер: встроенный режим турбо не заменяет VPN — установите Норм VPN или VPNUS.</li>
+                      <li>Opera: встроенный бесплатный VPN ограничен по скорости и безопасности, поэтому выбирайте платные сервисы.</li>
+                      <li>Firefox: расширений много, но лучше использовать полноценное приложение Норм VPN для максимальной защиты.</li>
+                    </ul>
+                    <p class="stars">★★★★</p>
+                  </div>
                 </div>
-                <div className="faq">
+                <div class="faq">
                   <h2>Часто задаваемые вопросы</h2>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как установить VPN‑расширение в Google Chrome?</h3>
                     <p>
                       Откройте Chrome Web Store и найдите выбранный VPN‑сервис.
@@ -596,7 +537,7 @@
                       приложение Норм VPN.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Можно ли пользоваться VPN‑расширением в Яндекс.Браузере без регистрации?</h3>
                     <p>
                       Да, многие расширения устанавливаются без создания аккаунта,
@@ -604,7 +545,7 @@
                       проверенные решения и учитывайте условия использования.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Насколько безопасны бесплатные VPN‑расширения?</h3>
                     <p>
                       Бесплатные плагины могут собирать информацию или
@@ -614,7 +555,7 @@
                       предпочтение платным сервисам с прозрачной политикой.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Что лучше: приложение или расширение?</h3>
                     <p>
                       Приложение защищает всё устройство и предоставляет
@@ -624,7 +565,7 @@
                       но не может заменить полноценный VPN.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Существуют ли русские VPN‑расширения с пробным периодом?</h3>
                     <p>
                       Да, некоторые сервисы предлагают бесплатный пробный
@@ -633,7 +574,7 @@
                       приложение — это более надёжный вариант.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как удалить вредоносное VPN‑расширение?</h3>
                     <p>
                       В Chrome перейдите в раздел «Расширения» и нажмите
@@ -642,7 +583,7 @@
                       браузер.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Почему VPN‑расширение перестаёт работать?</h3>
                     <p>
                       Возможные причины — обновление браузера, конфликт с
@@ -651,7 +592,7 @@
                       версии, а для стабильности используйте приложение.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Может ли VPN‑расширение ускорить доступ к YouTube?</h3>
                     <p>
                       Иногда VPN‑расширения могут улучшить скорость, если они
@@ -660,7 +601,7 @@
                       использовать платные приложения и выбирать ближайшие сервера.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Какие расширения поддерживают Яндекс.Браузер?</h3>
                     <p>
                       Яндекс.Браузер поддерживает плагины из собственного каталога
@@ -668,7 +609,7 @@
                       репутацию разработчика перед установкой.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Есть ли VPN‑расширения с пробным периодом?</h3>
                     <p>
                       Некоторые платные сервисы позволяют протестировать свой
@@ -680,9 +621,8 @@
                 </div>
               </section>
             </main>
-            {/* Exit intent banner */}
-            <div className={`exit-banner ${bannerVisible ? 'show' : ''}`}>
-              <div className="exit-banner-content">
+            <div class="exit-banner show">
+              <div class="exit-banner-content">
                 <h3>Не уходите без защиты!</h3>
                 <p>
                   Попробуйте Норм VPN бесплатно и убедитесь, насколько
@@ -696,10 +636,5 @@
             <footer>
               © 2026 Norm VPN — анонимность и безопасность. Все права защищены.
             </footer>
-          </>
-        );
-      }
-      ReactDOM.render(<VPNBrowserExtensionsPage />, document.getElementById('root'));
-    </script>
   </body>
 </html>

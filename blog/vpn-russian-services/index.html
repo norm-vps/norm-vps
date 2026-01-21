@@ -287,49 +287,14 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-      function RussianServicesPage() {
-        const [selected, setSelected] = React.useState(null);
-        const [result, setResult] = React.useState('');
-        const [stars, setStars] = React.useState(0);
-        const [bannerVisible, setBannerVisible] = React.useState(false);
-
-        React.useEffect(() => {
-          function handleMouseOut(event) {
-            if (event.clientY < 50) {
-              setBannerVisible(true);
-            }
-          }
-          window.addEventListener('mouseout', handleMouseOut);
-          return () => window.removeEventListener('mouseout', handleMouseOut);
-        }, []);
-
-        // Quiz options: choose your goal and get recommended service
-        const goals = ['Создать виртуальную LAN', 'Смотреть видео без блокировок', 'Обеспечить безопасность и конфиденциальность'];
-        const answers = [
-          'Для создания виртуальной LAN выберите Radmin VPN. Он позволяет объединить компьютеры в общий LAN, но помните: сервис работает только на Windows и не скрывает ваш IP.',
-          'Для обхода геоблокировок лучше использовать Норм VPN или VPNUS. Они маскируют ваш IP и дают доступ к библиотекам разных стран.',
-          'Для полноценной защиты выбирайте Норм VPN: он шифрует весь трафик, обеспечивает анонимность и не ведёт логи. VPNUS также подойдёт, если приоритет — стабильность.',
-        ];
-        function handleGoalChoice(index) {
-          setSelected(index);
-          setResult(answers[index]);
-          setStars(index + 2);
-        }
-        return (
-          <>
-            <header>
-              <div className="container nav">
-                <div className="nav-links">
+<header>
+              <div class="container nav">
+                <div class="nav-links">
                   <a href="/norm-vps/">Главная</a>
                   <a href="/norm-vps/blog/">Блог</a>
                 </div>
                 <a
-                  className="cta-button"
+                  class="cta-button"
                   href="https://t.me/normwpn_bot?start=partner_228691787"
                 >
                   3 дня бесплатно
@@ -337,8 +302,8 @@
               </div>
             </header>
             <main>
-              <section className="container hero">
-                <div className="hero-text">
+              <section class="container hero">
+                <div class="hero-text">
                   <h1>Radmin VPN и другие русские сервисы</h1>
                   <p>
                     На рынке существуют бесплатные инструменты вроде Radmin VPN и
@@ -346,26 +311,26 @@
                     подходят и почему для полноценной защиты и обхода блокировок
                     стоит выбрать Норм VPN или VPNUS.
                   </p>
-                  <div className="button-group">
+                  <div class="button-group">
                     <a
-                      className="service-btn norm-btn"
+                      class="service-btn norm-btn"
                       href="https://t.me/normwpn_bot?start=partner_228691787"
                     >
                       Попробовать Норм VPN
                     </a>
                     <a
-                      className="service-btn vpnus-btn"
+                      class="service-btn vpnus-btn"
                       href="https://t.me/vpnusvpn_bot?start=invite_246079"
                     >
                       Попробовать VPNUS
                     </a>
                   </div>
                 </div>
-                <div className="hero-image">
+                <div class="hero-image">
                   <img src="../../assets/hero2.png" alt="Виртуальная LAN и VPN" width="500" />
                 </div>
               </section>
-              <section className="container article-content">
+              <section class="container article-content">
                 <h2>Radmin VPN: что это такое?</h2>
                 <p>
                   Radmin VPN — это бесплатный инструмент, который создаёт
@@ -408,7 +373,7 @@
                   прозрачной политикой.
                 </p>
                 <h2>Таблица: сравнение Radmin VPN, Planeta VPN, Норм VPN и VPNUS</h2>
-                <table className="comparison-table">
+                <table class="comparison-table">
                   <thead>
                     <tr>
                       <th>Сервис</th>
@@ -466,66 +431,70 @@
                 </ol>
                 <h2>Интерактивный выбор: какой сервис вам подходит?</h2>
                 <p>Выберите свою цель и узнайте, какой сервис лучше всего подойдёт. За выбор вы получите звёзды!</p>
-                <div className="quiz">
+                <div class="quiz">
                   <h3>Какая у вас задача?</h3>
-                  {goals.map((goal, index) => (
-                    <button key={index} onClick={() => handleGoalChoice(index)}>{goal}</button>
-                  ))}
-                  {result && (
-                    <div className="quiz-result">
-                      <p>{result}</p>
-                      <p className="stars">{Array(stars).fill('★').join('')}</p>
-                    </div>
-                  )}
+                  <div class="quiz-options">
+                    <button type="button">Создать виртуальную LAN</button>
+                    <button type="button">Смотреть видео без блокировок</button>
+                    <button type="button">Обеспечить безопасность и конфиденциальность</button>
+                  </div>
+                  <div class="quiz-result">
+                    <p>Рекомендации:</p>
+                    <ul>
+                      <li>Для создания виртуальной LAN выберите Radmin VPN. Он позволяет объединить компьютеры в общий LAN, но работает только на Windows и не скрывает IP.</li>
+                      <li>Для обхода геоблокировок лучше использовать Норм VPN или VPNUS — они маскируют IP и дают доступ к библиотекам разных стран.</li>
+                      <li>Для полноценной защиты выбирайте Норм VPN: он шифрует весь трафик, обеспечивает анонимность и не ведёт логи. VPNUS подойдёт, если приоритет — стабильность.</li>
+                    </ul>
+                    <p class="stars">★★★★★</p>
+                  </div>
                 </div>
                 <h2>Ответы на популярные вопросы</h2>
-                <div className="faq">
-                  <div className="faq-item">
+                <div class="faq">
+                  <div class="faq-item">
                     <h3>Что делает Radmin VPN?</h3>
                     <p>Сервис создаёт виртуальную LAN-сеть, позволяя удалённым компьютерам работать как будто они подключены к одному роутеру.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Безопасен ли Radmin VPN?</h3>
                     <p>Radmin VPN шифрует данные внутри виртуальной сети, но не скрывает ваш IP и не защищает ваш браузинг. Для полной конфиденциальности используйте Норм VPN.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Можно ли через Radmin VPN обойти блокировки?</h3>
                     <p>Нет, сервис не маскирует IP и не позволяет изменять геолокацию. Для обхода блокировок выберите полноценный VPN.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Почему Planeta VPN бесплатный?</h3>
                     <p>Скорее всего, сервис зарабатывает на рекламе и/или продаже данных. Бесплатные VPN часто ограничены по функционалу.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как скачать Radmin VPN на ПК?</h3>
                     <p>Перейдите на официальный сайт Radmin VPN, загрузите установочный файл и запустите инсталлятор на Windows 7, 8, 10 или 11.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Какие есть русские VPN кроме Radmin VPN?</h3>
                     <p>Среди популярных сервисов — Planeta VPN, Amnezia VPN, «Дядя ВПН» и др. Многие из них бесплатны, но имеют ограничения и могут не обеспечивать достаточную конфиденциальность.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Можно ли играть через Radmin VPN?</h3>
                     <p>Да, сервис отлично подходит для сетевых игр по локальной сети. Главное — согласовать пароль сети и убедиться, что все участники на Windows.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как удалить Planeta VPN?</h3>
                     <p>Для расширения в браузере удалите его в настройках расширений. Для мобильного приложения просто удалите приложение через стандартный менеджер.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Какой русский VPN самый безопасный?</h3>
                     <p>Наиболее надёжные варианты — Норм VPN и VPNUS. Они предоставляют шифрование всего трафика и не ведут журналы.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Почему Radmin VPN не работает?</h3>
                     <p>Убедитесь, что у вас Windows, проверьте соединение с интернетом и правильность введённого пароля сети. Для иных целей используйте другие сервисы.</p>
                   </div>
                 </div>
               </section>
             </main>
-            {/* Exit intent banner */}
-            <div className={`exit-banner ${bannerVisible ? 'show' : ''}`}>
-              <div className="exit-banner-content">
+            <div class="exit-banner show">
+              <div class="exit-banner-content">
                 <h3>Защитите свои данные и наслаждайтесь свободой!</h3>
                 <p>
                   Оформите бесплатный пробный период на 3 дня в Норм VPN и
@@ -541,10 +510,5 @@
               © 2026 Norm VPN — настоящие VPN для вашей свободы. Все права
               защищены.
             </footer>
-          </>
-        );
-      }
-      ReactDOM.render(<RussianServicesPage />, document.getElementById('root'));
-    </script>
   </body>
 </html>
