@@ -4,56 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-    <title>Норм&nbsp;VPN&nbsp;— безопасный и быстрый доступ в Интернет</title>
+    <!-- SEO Meta Tags for Blog Page -->
+    <title>Блог | Норм VPN</title>
     <meta
       name="description"
-      content="Норм VPN — российский VPN‑сервис, который шифрует трафик, скрывает ваш IP‑адрес и помогает открывать контент из любой точки мира. Бесплатный пробный период на 3 дня, высокая скорость и стабильность."
+      content="Блог Норм VPN: статьи о виртуальных частных сетях, настройке, сравнении сервисов и актуальных новостях."
     />
     <meta
       name="keywords"
-      content="впн, vpn, бесплатный впн, скачать впн, лучший впн, норам VPN, защитить интернет, обход блокировок, безопасный интернет, скрыть IP"
+      content="блог vpn, статьи про vpn, установка vpn, лучший vpn, бесплатный vpn, безопасность в интернете"
     />
     <meta name="author" content="Norm VPN" />
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.github.io/" />
-    <meta property="og:title" content="Норм VPN — безопасный и быстрый доступ в Интернет" />
-    <meta property="og:description" content="Шифруем ваш трафик, скрываем IP‑адрес и открываем доступ к любимым сайтам. Попробуйте 3 дня бесплатно." />
-    <meta property="og:image" content="./assets/hero.png" />
-    <!-- Twitter -->
+    <meta property="og:title" content="Блог Норм VPN" />
+    <meta property="og:description" content="Читайте полезные материалы про VPN, безопасность, настройку и многое другое." />
+    <meta property="og:url" content="https://yourdomain.github.io/blog" />
+    <meta property="og:image" content="../assets/blog-card.jpg" />
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Норм VPN — безопасный и быстрый доступ в Интернет" />
-    <meta name="twitter:description" content="Попробуйте Норм VPN 3 дня бесплатно. Безопасность, стабильность, открытый Интернет." />
-    <meta name="twitter:image" content="./assets/hero.png" />
-    <!-- Geographical Meta Tags -->
-    <!-- Данные о регионе и координатах помогают поисковым системам понять географию бизнеса -->
+    <meta name="twitter:title" content="Блог Норм VPN" />
+    <meta name="twitter:description" content="Полезные материалы и советы по использованию VPN" />
+    <meta name="twitter:image" content="../assets/blog-card.jpg" />
+    <!-- Geographical Tags -->
     <meta name="geo.region" content="RU" />
     <meta name="geo.placename" content="Moscow" />
     <meta name="geo.position" content="55.7558;37.6173" />
     <meta name="ICBM" content="55.7558, 37.6173" />
-    <!-- Structured Data for SEO -->
+    <!-- Structured Data for Blog -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Норм VPN",
-        "description": "Норм VPN — сервис виртуальной частной сети, обеспечивающий безопасный доступ в Интернет, защиту данных и обход блокировок.",
-        "brand": {
-          "@type": "Brand",
-          "name": "Norm VPN"
-        },
-        "image": "./assets/hero.png",
-        "offers": {
-          "@type": "Offer",
-          "price": "0.00",
-          "priceCurrency": "RUB",
-          "priceValidUntil": "2026-12-31",
-          "availability": "https://schema.org/InStock"
-        }
+        "@type": "Blog",
+        "name": "Блог Норм VPN",
+        "url": "https://yourdomain.github.io/blog",
+        "description": "Полезные статьи о VPN и цифровой безопасности."
       }
     </script>
-    <!-- Preconnect and Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,30 +49,16 @@
       rel="stylesheet"
     />
     <style>
-      /* Base styles */
       body {
         margin: 0;
         font-family: 'Inter', sans-serif;
         background: linear-gradient(180deg, #0a0f25 0%, #0f2255 100%);
         color: #ffffff;
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
       }
-
       a {
         color: inherit;
         text-decoration: none;
       }
-
-      /* Layout Container */
-      .container {
-        width: 100%;
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Header */
       header {
         width: 100%;
         padding: 20px 0;
@@ -95,244 +69,204 @@
         backdrop-filter: blur(10px);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
-
+      .container {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
       .nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-
       .nav-links {
         display: flex;
         gap: 24px;
       }
-
       .nav-links a {
         font-weight: 600;
         transition: color 0.3s ease;
       }
-
       .nav-links a:hover {
         color: #00c4ff;
       }
-
       .cta-button {
         background: linear-gradient(90deg, #7758ff 0%, #00c4ff 100%);
         color: #ffffff;
         padding: 12px 24px;
         border-radius: 24px;
         font-weight: 600;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease;
       }
-
       .cta-button:hover {
         opacity: 0.9;
       }
-
-      /* Hero Section */
-      .hero {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+      main {
         padding: 80px 0;
-        gap: 40px;
       }
-
-      .hero-text {
-        max-width: 600px;
-      }
-
-      .hero h1 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 48px;
-        margin: 0 0 20px 0;
-        line-height: 1.2;
-      }
-
-      .hero p {
-        font-size: 18px;
-        margin-bottom: 32px;
-        color: #cfd9f5;
-      }
-
-      .hero img {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        border-radius: 12px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-      }
-
-      /* Features Section */
-      .features {
-        padding: 60px 0;
-      }
-
-      .features-grid {
+      .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 32px;
       }
-
-      .feature-card {
+      .card {
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 12px;
-        padding: 24px;
-        text-align: center;
+        overflow: hidden;
         transition: transform 0.3s ease;
       }
-
-      .feature-card:hover {
+      .card:hover {
         transform: translateY(-5px);
       }
-
-      .feature-icon {
-        font-size: 36px;
-        margin-bottom: 12px;
-        color: #00c4ff;
+      .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
       }
-
-      .feature-title {
+      .card-content {
+        padding: 16px;
+      }
+      .card-title {
         font-weight: 600;
         margin-bottom: 8px;
+        font-size: 18px;
       }
-
-      .feature-desc {
+      .card-desc {
         font-size: 14px;
         color: #cfd9f5;
       }
-
-      /* Devices Section */
-      .devices {
-        padding: 60px 0;
-      }
-
-      .devices-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 24px;
-        text-align: center;
-      }
-
-      .device-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 24px;
-        transition: transform 0.3s ease;
-      }
-
-      .device-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .device-icon {
-        font-size: 42px;
-        margin-bottom: 12px;
-        color: #7758ff;
-      }
-
-      /* Footer */
       footer {
         padding: 40px 0;
         text-align: center;
         color: #7f8dca;
         font-size: 14px;
       }
-
-      /* Media Queries */
       @media (max-width: 768px) {
-        .hero {
-          flex-direction: column;
-          text-align: center;
-        }
-        .hero h1 {
-          font-size: 36px;
-        }
-        .hero img {
-          max-width: 100%;
-        }
-        .nav-links {
-          gap: 16px;
+        main {
+          padding: 60px 0;
         }
       }
     </style>
   </head>
   <body>
     <div id="root"></div>
-    <!-- React and ReactDOM via CDN -->
+    <!-- React and Babel -->
     <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
-    <!-- Main React component -->
     <script type="text/babel">
-      function App() {
-        const features = [
+      function Blog() {
+        const posts = [
           {
-            icon: '🚀',
-            title: 'Высокая скорость',
-            desc: 'Минимальная потеря скорости благодаря оптимизированным серверам.',
+            title: 'Что такое VPN и как он работает',
+            slug: '/blog/what-is-vpn',
+            desc: 'Принципы работы VPN, зачем он нужен и основные преимущества.',
           },
           {
-            icon: '🔒',
-            title: 'Надёжное шифрование',
-            desc: 'Ваш трафик зашифрован, IP‑адрес скрыт, данные в безопасности.',
+            title: 'Как скачать и установить VPN на разные устройства',
+            slug: '/blog/install-vpn',
+            desc: 'Пошаговая инструкция для Windows, Android, iOS и macOS.',
           },
           {
-            icon: '🌍',
-            title: 'Доступ к контенту',
-            desc: 'Открывайте сайты и сервисы, недоступные в вашей стране.',
+            title: 'Лучшие VPN‑сервисы – рейтинг и сравнение',
+            slug: '/blog/top-vpn',
+            desc: 'Сравнение популярных платных и бесплатных VPN‑провайдеров.',
           },
           {
-            icon: '📞',
-            title: 'Круглосуточная поддержка',
-            desc: 'Поможем настроить VPN и решим любые вопросы.',
+            title: 'Бесплатные VPN: достоинства, риски и рекомендации',
+            slug: '/blog/free-vpn',
+            desc: 'Стоит ли пользоваться бесплатными VPN и какие есть альтернативы?',
           },
           {
-            icon: '📱',
-            title: 'Все устройства',
-            desc: 'Поддержка Android, iOS, Windows, MacOS, браузеров и роутеров.',
+            title: 'VPN для компьютера: Windows и macOS',
+            slug: '/blog/vpn-for-pc',
+            desc: 'Выбор и настройка VPN на десктопных системах.',
           },
           {
-            icon: '💎',
-            title: 'Партнёрская программа',
-            desc: 'Зарабатывайте, рекомендуя наш сервис друзьям (до 2 уровней).',
-          },
-        ];
-        const devices = [
-          {
-            icon: '🤖',
-            title: 'Android',
-            desc: 'Приложение для Android — быстрый старт.',
+            title: 'VPN для смартфона: Android и iOS',
+            slug: '/blog/vpn-for-smartphones',
+            desc: 'Как настроить VPN на телефонах и планшетах.',
           },
           {
-            icon: '🍎',
-            title: 'iOS',
-            desc: 'Удобное приложение для iPhone и iPad.',
+            title: 'VPN‑расширения для браузеров',
+            slug: '/blog/vpn-browser-extensions',
+            desc: 'Плюсы и минусы браузерных VPN‑плагинов.',
           },
           {
-            icon: '💻',
-            title: 'Windows',
-            desc: 'Клиент для Windows 10/11 и старше.',
+            title: 'VPN для YouTube и потоковых сервисов',
+            slug: '/blog/vpn-for-youtube',
+            desc: 'Обход блокировок видео‑сервисов и выбор оптимального сервера.',
           },
           {
-            icon: '🖥️',
-            title: 'MacOS',
-            desc: 'Лёгкий клиент для MacBook и iMac.',
+            title: 'VPN для игр: Roblox, Brawl Stars и другие',
+            slug: '/blog/vpn-for-games',
+            desc: 'Настройка VPN для игр и снижение пинга.',
+          },
+          {
+            title: 'Radmin VPN и другие популярные русские сервисы',
+            slug: '/blog/radmin-vpn-review',
+            desc: 'Обзор Radmin VPN и его аналогов.',
+          },
+          {
+            title: 'Amnezia, “Дядя Ваня” и “Дед VPN”',
+            slug: '/blog/amnezia-vanya-ded',
+            desc: 'Сравнение отечественных VPN‑проектов.',
+          },
+          {
+            title: 'Proton VPN, ByeByeDPI и V2RayTun: продвинутые решения',
+            slug: '/blog/proton-byebyedpi',
+            desc: 'Профессиональные инструменты для обхода цензуры.',
+          },
+          {
+            title: 'VPN для мессенджеров и соцсетей',
+            slug: '/blog/vpn-for-messengers',
+            desc: 'Использование VPN для WhatsApp, Telegram, Instagram и TikTok.',
+          },
+          {
+            title: 'VPN в России: актуальные сервисы и законодательство',
+            slug: '/blog/vpn-in-russia',
+            desc: 'Как выбрать VPN, который работает в России, и что говорят законы.',
+          },
+          {
+            title: 'Настройка VPN: пошаговые инструкции',
+            slug: '/blog/setup-vpn',
+            desc: 'Детальный гайд по настройке VPN на всех устройствах.',
+          },
+          {
+            title: 'Решение проблем: если VPN не работает',
+            slug: '/blog/vpn-not-working',
+            desc: 'Диагностика и устранение неполадок с VPN.',
+          },
+          {
+            title: 'Безопасность и конфиденциальность с VPN',
+            slug: '/blog/security-and-privacy',
+            desc: 'Как VPN защищает ваши данные и почему это важно.',
+          },
+          {
+            title: 'VPN на роутере и для Smart‑TV',
+            slug: '/blog/vpn-router',
+            desc: 'Настройка VPN на маршрутизаторах и телевизорах.',
+          },
+          {
+            title: 'VPN и прокси: в чём разница?',
+            slug: '/blog/vpn-vs-proxy',
+            desc: 'Сравнение VPN и прокси‑серверов.',
+          },
+          {
+            title: 'Новости и тренды: VPN 2025–2026',
+            slug: '/blog/vpn-news-trends',
+            desc: 'Свежие события, запреты и развития рынка VPN.',
           },
         ];
         return (
           <>
             <header>
               <div className="container nav">
-                <div className="logo" style={{ fontWeight: 700, fontSize: '24px' }}>
-                  Норм&nbsp;VPN
-                </div>
+                <div className="logo" style={{ fontWeight: 700, fontSize: '24px' }}>Норм&nbsp;VPN</div>
                 <nav className="nav-links">
-                  <a href="#">Главная</a>
+                  <a href="/">Главная</a>
                   <a href="/blog">Блог</a>
                 </nav>
                 <a
@@ -343,63 +277,29 @@
                 </a>
               </div>
             </header>
-            <main>
-              <section className="container hero">
-                <div className="hero-text">
-                  <h1>Твой доступ к свободному Интернету</h1>
-                  <p>
-                    Норм VPN обеспечивает безопасность соединения, шифрует трафик и
-                    скрывает IP‑адрес. Выйдите из‑под контроля цензуры и
-                    пользуйтесь любимыми сервисами где бы вы ни были.
-                  </p>
-                  <a
-                    href="https://t.me/normwpn_bot?start=partner_228691787"
-                    className="cta-button"
-                    style={{ fontSize: '18px' }}
-                  >
-                    Начать бесплатно
+            <main className="container">
+              <h1 style={{ textAlign: 'center', marginBottom: '40px', fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}>
+                Блог Норм VPN
+              </h1>
+              <div className="grid">
+                {posts.map((post, idx) => (
+                  <a href={post.slug} className="card" key={idx}>
+                    <img src="../assets/blog-card.jpg" alt={post.title} />
+                    <div className="card-content">
+                      <div className="card-title">{post.title}</div>
+                      <div className="card-desc">{post.desc}</div>
+                    </div>
                   </a>
-                </div>
-                <div className="hero-media">
-                  <img src="./assets/hero.png" alt="Norm VPN иллюстрация" />
-                </div>
-              </section>
-              <section className="container features">
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Почему Норм VPN?</h2>
-                <div className="features-grid">
-                  {features.map((feat, index) => (
-                    <div className="feature-card" key={index}>
-                      <div className="feature-icon">{feat.icon}</div>
-                      <div className="feature-title">{feat.title}</div>
-                      <div className="feature-desc">{feat.desc}</div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-              <section className="container devices">
-                <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>
-                  Выберите ваше устройство
-                </h2>
-                <div className="devices-grid">
-                  {devices.map((device, idx) => (
-                    <div className="device-card" key={idx}>
-                      <div className="device-icon">{device.icon}</div>
-                      <div className="feature-title">{device.title}</div>
-                      <div className="feature-desc">{device.desc}</div>
-                    </div>
-                  ))}
-                </div>
-              </section>
+                ))}
+              </div>
             </main>
             <footer>
-              <div className="container">
-                © 2026 Норм VPN. Все права защищены.
-              </div>
+              <div className="container">© 2026 Норм VPN. Все права защищены.</div>
             </footer>
           </>
         );
       }
-      ReactDOM.render(<App />, document.getElementById('root'));
+      ReactDOM.render(<Blog />, document.getElementById('root'));
     </script>
   </body>
 </html>
