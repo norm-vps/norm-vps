@@ -252,37 +252,21 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <!-- React and Babel -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-      function Page() {
-        const [quizResult, setQuizResult] = React.useState(null);
-        const handleQuiz = (choice) => {
-          setQuizResult(choice);
-        };
-        return (
-          <>
-            <header>
-              <div className="logo">NORM VPN</div>
+<header>
+              <div class="logo">NORM VPN</div>
               <nav>
                 <a href="/norm-vps/">Главная</a>
                 <a href="/norm-vps/blog/">Блог</a>
-                <button
-                  className="cta-btn"
-                  onClick={() => {
-                    window.location.href =
-                      'https://t.me/normwpn_bot?start=partner_228691787';
-                  }}
+                <a
+                  class="cta-btn"
+                  href="https://t.me/normwpn_bot?start=partner_228691787"
                 >
                   3 дня бесплатно
-                </button>
+                </a>
               </nav>
             </header>
-            <section className="hero">
-              <div className="hero-text">
+            <section class="hero">
+              <div class="hero-text">
                 <h1>VPN для мессенджеров и соцсетей: WhatsApp, Telegram, Instagram и TikTok</h1>
                 <p>
                   В некоторых странах популярные приложения для общения и обмена
@@ -292,30 +276,24 @@
                   настроить VPN для WhatsApp, Telegram, Instagram и TikTok и
                   почему Норм VPN и VPNUS — оптимальные решения для этих задач.
                 </p>
-                <div className="hero-buttons">
-                  <button
-                    className="service-btn"
-                    onClick={() => {
-                      window.location.href =
-                        'https://t.me/normwpn_bot?start=partner_228691787';
-                    }}
+                <div class="hero-buttons">
+                  <a
+                    class="service-btn"
+                    href="https://t.me/normwpn_bot?start=partner_228691787"
                   >
                     Попробовать Norm VPN
-                  </button>
-                  <button
-                    className="service-btn"
-                    onClick={() => {
-                      window.location.href =
-                        'https://t.me/vpnusvpn_bot?start=invite_246079';
-                    }}
+                  </a>
+                  <a
+                    class="service-btn"
+                    href="https://t.me/vpnusvpn_bot?start=invite_246079"
                   >
                     Попробовать VPNUS
-                  </button>
+                  </a>
                 </div>
               </div>
               <img src="../../assets/hero2.png" alt="Иллюстрация VPN" />
             </section>
-            <article className="article">
+            <article class="article">
               <h2>Почему мессенджеры блокируют?</h2>
               <p>
                 Во многих странах правительство и провайдеры ограничивают
@@ -345,248 +323,6 @@
                 <li>Подпишитесь на безопасный VPN, например Norm VPN или VPNUS;</li>
                 <li>Установите приложение на смартфон или компьютер;</li>
                 <li>Выберите сервер в стране, где WhatsApp разрешён (например,
-                Португалия или Италия);</li>
-                <li>Подключитесь и откройте WhatsApp — вызовы и сообщения будут
-                работать без блокировок.</li>
-              </ul>
-              <h2>Telegram: обход ограничений</h2>
-              <p>
-                Telegram славится функциями конфиденциальности, но именно это
-                становится причиной его блокировки. В статье Softonic
-                отмечается, что VPN меняет ваше местоположение, присваивая новый
-                IP‑адрес, шифрует данные и помогает избежать географических
-                ограничений【69917187233597†L262-L306】. Этот способ позволяет
-                разблокировать Telegram в странах, где сервис заблокирован.
-              </p>
-              <ul>
-                <li>Запустите приложение VPN и выберите сервер в стране, где
-                Telegram доступен (предпочтительно географически близкой);
-                </li>
-                <li>Подключитесь к серверу и затем откройте Telegram;</li>
-                <li>Теперь вы можете общаться и использовать каналы как обычно;</li>
-                <li>Если приложение недоступно в магазине, временно смените
-                регион и скачайте его, подключившись через VPN.</li>
-              </ul>
-              <h2>Instagram и TikTok: защита контента</h2>
-              <p>
-                Популярные соцсети Instagram и TikTok подвергаются временным
-                блокировкам и запретам в разных странах. Хотя некоторые запреты
-                (например, потенциальный бан TikTok в США) могут быть реализованы
-                на уровне магазинов приложений, использование VPN по‑прежнему
-                помогает обойти географические ограничения, получить доступ к
-                заблокированному контенту и защищать соединение. Выбирайте
-                стабильный сервис, поддерживающий высокую скорость для
-                просмотра видео, и переключайтесь между серверами для лучшего
-                результата.
-              </p>
-              <h2>Таблица: мессенджеры, блокировки и VPN</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Приложение</th>
-                    <th>Типичные ограничения</th>
-                    <th>Зачем VPN?</th>
-                    <th>Рекомендация</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>WhatsApp</td>
-                    <td>Запрет голосовых и видеозвонков в Китае, ОАЭ, Катаре и др.</td>
-                    <td>Перенаправление трафика через сервер в стране без запрета
-                    позволяет совершать звонки и отправлять сообщения</td>
-                    <td>Norm VPN / VPNUS</td>
-                  </tr>
-                  <tr>
-                    <td>Telegram</td>
-                    <td>Блокировки в России, Иране, Пакистане, Ираке и др.</td>
-                    <td>VPN меняет IP и шифрует данные, позволяя войти в приложение
-                    и обходить цензуру</td>
-                    <td>Norm VPN / VPNUS</td>
-                  </tr>
-                  <tr>
-                    <td>Instagram</td>
-                    <td>Ограниченный доступ к контенту, блокировка отдельных
-                    страниц и хэштегов</td>
-                    <td>VPN предоставляет доступ к полной версии сети,
-                    разблокирует сторис и Reels</td>
-                    <td>Norm VPN</td>
-                  </tr>
-                    <tr>
-                    <td>TikTok</td>
-                    <td>Региональные баны и ограничение загрузки приложения</td>
-                    <td>Подключение к зарубежному серверу позволяет открывать
-                    приложение и просматривать ленту</td>
-                    <td>VPNUS / Norm VPN</td>
-                  </tr>
-                </tbody>
-              </table>
-              <h2>Инструкции по установке</h2>
-              <p>
-                Настройка VPN для мессенджеров и соцсетей требует всего
-                нескольких шагов:
-              </p>
-              <ul>
-                <li>Скачайте приложение Norm VPN или VPNUS и создайте аккаунт;</li>
-                <li>Запустите приложение и разрешите доступ к сетевым настройкам;</li>
-                <li>Выберите сервер в стране, где нужный сервис работает;</li>
-                <li>Подключитесь и затем запустите мессенджер или социальную
-                сеть — она откроется без ограничений.</li>
-              </ul>
-              <h2>Опрос: какой сервис нужно разблокировать?</h2>
-              <div className="quiz">
-                {quizResult ? (
-                  <p>
-                    <strong>Результат:</strong> {quizResult}
-                  </p>
-                ) : (
-                  <>
-                    <div className="quiz-question">
-                      Выберите мессенджер или соцсеть, который хотите
-                      разблокировать:
-                    </div>
-                    <div className="quiz-options">
-                      <button onClick={() => handleQuiz('Выберите сервер с разрешённым WhatsApp, например в Европе.')}>WhatsApp</button>
-                      <button onClick={() => handleQuiz('Подключитесь к серверу, где Telegram доступен, например в Польше или Германии.')}>Telegram</button>
-                      <button onClick={() => handleQuiz('Используйте стабильный сервер для Instagram, чтобы разблокировать сторис и Reels.')}>Instagram</button>
-                      <button onClick={() => handleQuiz('Подключитесь к серверу в стране без ограничений TikTok, например в Канаде.')}>TikTok</button>
-                      <button onClick={() => handleQuiz('Norm VPN или VPNUS — универсальный выбор для всех сервисов.')}>Мне нужен универсальный VPN</button>
-                    </div>
-                  </>
-                )}
-              </div>
-              <h2>FAQ</h2>
-              <div className="faq">
-                <details>
-                  <summary>Можно ли использовать VPN для WhatsApp в ОАЭ?</summary>
-                  <p>
-                    Да, подключившись к VPN‑серверу в стране, где WhatsApp
-                    разрешён, вы сможете совершать звонки и отправлять
-                    сообщения даже в странах, где сервис заблокирован.
-                  </p>
-                </details>
-                <details>
-                  <summary>Как разблокировать Telegram в России с помощью VPN?</summary>
-                  <p>
-                    Загрузите приложение Norm VPN или VPNUS, выберите сервер
-                    в стране, где Telegram работает (например, Латвия), и
-                    подключитесь. После этого откройте Telegram — приложение
-                    будет доступно.
-                  </p>
-                </details>
-                <details>
-                  <summary>VPN влияет на качество видео в Instagram?</summary>
-                  <p>
-                    При выборе сервера, расположенного ближе к вам, падение
-                    скорости минимально. Платные сервисы, такие как Norm VPN,
-                    обеспечивают высокую скорость и стабильность, поэтому
-                    просмотр видео проходит без задержек.
-                  </p>
-                </details>
-                <details>
-                  <summary>Поможет ли VPN установить TikTok, если приложение
-                    удалено из магазина?</summary>
-                  <p>
-                    Да. Подключитесь к серверу в стране, где TikTok доступен,
-                    затем откройте магазин приложений — возможность скачивания
-                    появится. После установки используйте VPN, чтобы
-                    продолжать доступ.
-                  </p>
-                </details>
-                <details>
-                  <summary>Насколько безопасны прокси для Telegram?</summary>
-                  <p>
-                    В приложении Telegram есть поддержка SOCKS5 и MTProto, но
-                    прокси не обеспечивают такого уровня защиты, как VPN.
-                    Использование VPN шифрует весь трафик и скрывает IP,
-                    предоставляя более высокую степень конфиденциальности.
-                  </p>
-                </details>
-                <details>
-                  <summary>Можно ли использовать бесплатные VPN для мессенджеров?</summary>
-                  <p>
-                    Бесплатные сервисы часто имеют ограничения по трафику и
-                    серверам, могут собирать ваши данные и показывать рекламу.
-                    Для надёжной связи лучше выбирать проверенные платные
-                    варианты, такие как Norm VPN и VPNUS.
-                  </p>
-                </details>
-                <details>
-                  <summary>Поддерживает ли VPNUS звонки в WhatsApp и Telegram?</summary>
-                  <p>
-                    Да. VPNUS обеспечивает высокую стабильность в играх и
-                    мессенджерах, поэтому голосовые и видеозвонки работают без
-                    задержек и обрывов.
-                  </p>
-                </details>
-                <details>
-                  <summary>Какую страну выбрать для наилучшего качества связи?</summary>
-                  <p>
-                    Выбирайте сервер ближе к вашему географическому
-                    расположению, но за пределами страны, где действует
-                    блокировка. Это обеспечит баланс между скоростью и
-                    обходом цензуры.
-                  </p>
-                </details>
-                <details>
-                  <summary>Нужно ли отключать VPN после использования мессенджера?</summary>
-                  <p>
-                    Нет. Лучше оставить VPN включённым — это защитит вас от
-                    слежки со стороны провайдера и обеспечит сохранность
-                    личных данных во время работы в интернете.
-                  </p>
-                </details>
-                <details>
-                  <summary>Почему Norm VPN лучше бесплатных расширений?</summary>
-                  <p>
-                    Norm VPN использует надёжное шифрование, не ведёт
-                    журналы, предлагает серверы в России и за рубежом и
-                    обеспечивает стабильную скорость. Бесплатные расширения
-                    ограничены функционалом и могут продавать ваши данные.
-                  </p>
-                </details>
-              </div>
-            </article>
-            <footer
-              style={{
-                textAlign: 'center',
-                padding: '2rem 1rem',
-                background: '#233973',
-                color: '#fff',
-              }}
-            >
-              © 2026 Norm VPN. Все права защищены.
-            </footer>
-            <div id="exitBanner" className="exit-banner">
-              <span>Не уходите! Попробуйте Norm VPN бесплатно 3 дня.</span>
-              <button
-                onClick={() => {
-                  window.location.href = 'https://t.me/normwpn_bot?start=partner_228691787';
-                }}
-              >
-                Получить доступ
-              </button>
-            </div>
-          </>
-        );
-      }
-      ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
-      // Exit intent banner logic
-      let bannerShown = false;
-      function showExitBanner() {
-        if (!bannerShown) {
-          const banner = document.getElementById('exitBanner');
-          if (banner) {
-            banner.style.display = 'flex';
-          }
-          bannerShown = true;
-        }
-      }
-      document.addEventListener('mouseleave', (e) => {
-        if (e.clientY < 0) {
-          showExitBanner();
-        }
-      });
-    </script>
+                Португалия или Италия
   </body>
 </html>

@@ -286,53 +286,14 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-      function GamesPage() {
-        const [selected, setSelected] = React.useState(null);
-        const [result, setResult] = React.useState('');
-        const [stars, setStars] = React.useState(0);
-        const [bannerVisible, setBannerVisible] = React.useState(false);
-
-        React.useEffect(() => {
-          // Show banner when user moves mouse to top (exit intent)
-          function handleMouseOut(event) {
-            if (event.clientY < 50) {
-              setBannerVisible(true);
-            }
-          }
-          window.addEventListener('mouseout', handleMouseOut);
-          return () => window.removeEventListener('mouseout', handleMouseOut);
-        }, []);
-
-        const games = ['Roblox', 'Brawl Stars', 'Minecraft', 'Valorant', 'Fortnite'];
-        const recommendations = [
-          'Для Roblox выбирайте серверы в Европе или США, чтобы найти стабильные игровые площадки.',
-          'Brawl Stars отлично работает на серверах в Германии и России — они обеспечивают низкий пинг и минимальные задержки.',
-          'Minecraft лучше запускать с серверов, расположенных ближе к вам — например, Россия или Финляндия.',
-          'Для Valorant выбирайте серверы в Турции или Польше, чтобы подключаться к европейским лобби.',
-          'Fortnite показывает лучшую скорость на серверах в Нидерландах и Франции.'
-        ];
-
-        function handleChoice(index) {
-          setSelected(index);
-          setResult(recommendations[index]);
-          setStars(index + 1);
-        }
-
-        return (
-          <>
-            <header>
-              <div className="container nav">
-                <div className="nav-links">
+<header>
+              <div class="container nav">
+                <div class="nav-links">
                   <a href="/norm-vps/">Главная</a>
                   <a href="/norm-vps/blog/">Блог</a>
                 </div>
                 <a
-                  className="cta-button"
+                  class="cta-button"
                   href="https://t.me/normwpn_bot?start=partner_228691787"
                 >
                   3 дня бесплатно
@@ -340,8 +301,8 @@
               </div>
             </header>
             <main>
-              <section className="container hero">
-                <div className="hero-text">
+              <section class="container hero">
+                <div class="hero-text">
                   <h1>VPN для игр: стабильность и защита</h1>
                   <p>
                     Игровой VPN — это не только способ обойти региональные блокировки,
@@ -349,26 +310,26 @@
                     Норм VPN или VPNUS, чтобы скрыть свой IP‑адрес, выбрать
                     нужный регион и играть без лагов и ограничений.
                   </p>
-                  <div className="button-group">
+                  <div class="button-group">
                     <a
-                      className="service-btn norm-btn"
+                      class="service-btn norm-btn"
                       href="https://t.me/normwpn_bot?start=partner_228691787"
                     >
                       Попробовать Норм VPN
                     </a>
                     <a
-                      className="service-btn vpnus-btn"
+                      class="service-btn vpnus-btn"
                       href="https://t.me/vpnusvpn_bot?start=invite_246079"
                     >
                       Попробовать VPNUS
                     </a>
                   </div>
                 </div>
-                <div className="hero-image">
+                <div class="hero-image">
                   <img src="../../assets/hero.png" alt="Геймеры за компьютером" width="500" />
                 </div>
               </section>
-              <section className="container article-content">
+              <section class="container article-content">
                 <h2>Почему геймерам нужен VPN?</h2>
                 <p>
                   При игре онлайн важно иметь стабильное и защищённое соединение. VPN
@@ -409,7 +370,7 @@
                   <li>❌ Использование VPN для обхода IP‑банов может нарушать правила сервисов.</li>
                 </ul>
                 <h2>Таблица: рекомендуемые серверы для популярных игр</h2>
-                <table className="comparison-table">
+                <table class="comparison-table">
                   <thead>
                     <tr>
                       <th>Игра</th>
@@ -455,66 +416,74 @@
                 </ol>
                 <h2>Интерактивный тест: выберите игру</h2>
                 <p>Выберите вашу любимую игру, чтобы получить рекомендацию по оптимальному серверу. За участие вы получите виртуальные звёзды!</p>
-                <div className="quiz">
+                <div class="quiz">
                   <h3>Выберите игру для настройки VPN:</h3>
-                  {games.map((game, index) => (
-                    <button key={index} onClick={() => handleChoice(index)}>{game}</button>
-                  ))}
-                  {result && (
-                    <div className="quiz-result">
-                      <p>{result}</p>
-                      <p className="stars">{Array(stars).fill('★').join('')}</p>
-                    </div>
-                  )}
+                  <div class="quiz-options">
+                    <button type="button">Roblox</button>
+                    <button type="button">Brawl Stars</button>
+                    <button type="button">Minecraft</button>
+                    <button type="button">Valorant</button>
+                    <button type="button">Fortnite</button>
+                  </div>
+                  <div class="quiz-result">
+                    <p>Рекомендации по серверам:</p>
+                    <ul>
+                      <li>Для Roblox выбирайте серверы в Европе или США, чтобы найти стабильные игровые площадки.</li>
+                      <li>Brawl Stars отлично работает на серверах в Германии и России — они обеспечивают низкий пинг и минимальные задержки.</li>
+                      <li>Minecraft лучше запускать с серверов, расположенных ближе к вам — например, Россия или Финляндия.</li>
+                      <li>Для Valorant выбирайте серверы в Турции или Польше, чтобы подключаться к европейским лобби.</li>
+                      <li>Fortnite показывает лучшую скорость на серверах в Нидерландах и Франции.</li>
+                    </ul>
+                    <p class="stars">★★★★★</p>
+                  </div>
                 </div>
                 <h2>Ответы на популярные вопросы</h2>
-                <div className="faq">
-                  <div className="faq-item">
+                <div class="faq">
+                  <div class="faq-item">
                     <h3>Как снизить пинг в Roblox с помощью VPN?</h3>
                     <p>Используйте сервера, расположенные ближе к вам. Например, если вы в России, попробуйте европейские серверы. Если пинг высок, переключитесь на другой близкий сервер.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как подключить VPN для Brawl Stars на телефоне?</h3>
                     <p>Скачайте приложение Норм VPN или VPNUS из официального магазина, войдите в аккаунт, выберите сервер в Германии или России и запустите игру.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Зачем нужен VPN в Minecraft?</h3>
                     <p>VPN скрывает ваш IP и позволяет играть на серверах других регионов, защищает от атак и открывает доступ к модам и картам, которые могут быть заблокированы.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Можно ли использовать VPN на консолях?</h3>
                     <p>Да. Вы можете настроить VPN на роутере или использовать функцию «раздача VPN» с компьютера, чтобы подключить консоль через защищённый канал.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Снизит ли VPN мой FPS?</h3>
                     <p>VPN может добавить небольшую задержку из‑за маршрутизации, но на FPS это практически не влияет. Главное выбрать быстрый сервер и стабильный протокол.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Какой VPN выбрать для Valorant?</h3>
                     <p>Рекомендуем Норм VPN — он предлагает сервера в Польше и Турции, совместимые с Valorant. VPNUS тоже поддерживает игровые сервера и обеспечивает стабильность.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Могу ли я играть через VPN на публичном Wi‑Fi?</h3>
                     <p>Да, VPN защищает ваше соединение и предотвращает прослушку. Это особенно важно при игре в кафе или отеле.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Легально ли использовать VPN в играх?</h3>
                     <p>Использование VPN само по себе легально, однако некоторые игры могут запрещать обход блокировок. Перед использованием ознакомьтесь с правилами игры.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Поможет ли VPN избежать банов?</h3>
                     <p>VPN скрывает ваш IP‑адрес и может помочь обойти бан, но это может нарушать условия сервиса. Используйте этот метод только на свой страх и риск.</p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как отменить подписку на VPN?</h3>
                     <p>В приложениях Норм VPN и VPNUS вы можете управлять подпиской в личном кабинете или связаться с поддержкой для отмены.</p>
                   </div>
                 </div>
               </section>
             </main>
-            {/* Exit intent banner */}
-            <div className={`exit-banner ${bannerVisible ? 'show' : ''}`}>
-              <div className="exit-banner-content">
+            <div class="exit-banner show">
+              <div class="exit-banner-content">
                 <h3>Играйте без лагов и ограничений!</h3>
                 <p>
                   Попробуйте Норм VPN бесплатно 3 дня и наслаждайтесь любимыми
@@ -529,10 +498,5 @@
               © 2026 Norm VPN — игровой VPN для стабильных побед. Все права
               защищены.
             </footer>
-          </>
-        );
-      }
-      ReactDOM.render(<GamesPage />, document.getElementById('root'));
-    </script>
   </body>
 </html>

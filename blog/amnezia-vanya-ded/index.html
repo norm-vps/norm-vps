@@ -254,37 +254,21 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <!-- React and Babel -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-      function Page() {
-        const [quizResult, setQuizResult] = React.useState(null);
-        const handleQuiz = (choice) => {
-          setQuizResult(choice);
-        };
-        return (
-          <>
-            <header>
-              <div className="logo">NORM VPN</div>
+<header>
+              <div class="logo">NORM VPN</div>
               <nav>
                 <a href="/norm-vps/">Главная</a>
                 <a href="/norm-vps/blog/">Блог</a>
-                <button
-                  className="cta-btn"
-                  onClick={() => {
-                    window.location.href =
-                      'https://t.me/normwpn_bot?start=partner_228691787';
-                  }}
+                <a
+                  class="cta-btn"
+                  href="https://t.me/normwpn_bot?start=partner_228691787"
                 >
                   3 дня бесплатно
-                </button>
+                </a>
               </nav>
             </header>
-            <section className="hero">
-              <div className="hero-text">
+            <section class="hero">
+              <div class="hero-text">
                 <h1>Amnezia, «Дядя Ваня» и «Дед VPN»: чем они отличаются?</h1>
                 <p>
                   Российские проекты Amnezia, «Дядя Ваня» и Ded VPN позиционируются
@@ -293,25 +277,19 @@
                   отличаются и почему для серьёзной защиты данных лучше выбирать
                   платные сервисы, такие как Норм VPN и VPNUS.
                 </p>
-                <div className="hero-buttons">
-                  <button
-                    className="service-btn norm-btn"
-                    onClick={() => {
-                      window.location.href =
-                        'https://t.me/normwpn_bot?start=partner_228691787';
-                    }}
+                <div class="hero-buttons">
+                  <a
+                    class="service-btn norm-btn"
+                    href="https://t.me/normwpn_bot?start=partner_228691787"
                   >
                     Попробовать Norm VPN
-                  </button>
-                  <button
-                    className="service-btn vpnus-btn"
-                    onClick={() => {
-                      window.location.href =
-                        'https://t.me/vpnusvpn_bot?start=invite_246079';
-                    }}
+                  </a>
+                  <a
+                    class="service-btn vpnus-btn"
+                    href="https://t.me/vpnusvpn_bot?start=invite_246079"
                   >
                     Попробовать VPNUS
-                  </button>
+                  </a>
                 </div>
               </div>
               <img
@@ -319,7 +297,7 @@
                 alt="Иллюстрация VPN"
               />
             </section>
-            <article className="article">
+            <article class="article">
               <h2>Что такое Amnezia VPN?</h2>
               <p>
                 Amnezia VPN — это полностью открытый проект, разработанный
@@ -343,7 +321,7 @@
                 демонстрировать нестабильную скорость в зависимости от
                 выбранного хоста.
               </p>
-              <div className="quote">
+              <div class="quote">
                 Открытый исходный код, децентрализация и возможность
                 самостоятельно размещать сервер делают Amnezia уникальным среди
                 российских решений, однако по скорости и способности обходить
@@ -455,25 +433,19 @@
                 Норм VPN и VPNUS.
               </p>
               <h2>Опрос: какой сервис вам подходит?</h2>
-              <div className="quiz">
-                {quizResult ? (
-                  <p><strong>Результат:</strong> {quizResult}</p>
-                ) : (
-                  <>
-                    <div className="quiz-question">
-                      Какие задачи для вас важнее всего?
-                    </div>
-                    <div className="quiz-options">
-                      <button onClick={() => handleQuiz('Amnezia VPN для контроля над сервером')}>Полный контроль и настройка</button>
-                      <button onClick={() => handleQuiz('«Дядя Ваня VPN» для повседневного использования')}>Простой доступ и множество серверов</button>
-                      <button onClick={() => handleQuiz('Ded VPN для быстрых подключений')}>Безлимит и быстрота</button>
-                      <button onClick={() => handleQuiz('Norm VPN или VPNUS для максимальной конфиденциальности')}>Максимальная безопасность и анонимность</button>
-                    </div>
-                  </>
-                )}
+              <div class="quiz">
+                <div class="quiz-question">
+                  Какие задачи для вас важнее всего?
+                </div>
+                <div class="quiz-options">
+                  <button type="button">Полный контроль и настройка</button>
+                  <button type="button">Простой доступ и множество серверов</button>
+                  <button type="button">Безлимит и быстрота</button>
+                  <button type="button">Максимальная безопасность и анонимность</button>
+                </div>
               </div>
               <h2>Часто задаваемые вопросы (FAQ)</h2>
-              <div className="faq">
+              <div class="faq">
                 <details>
                   <summary>Можно ли полностью доверять Amnezia VPN?</summary>
                   <p>
@@ -568,39 +540,16 @@
                 </details>
               </div>
             </article>
-            <footer style={{ textAlign: 'center', padding: '2rem 1rem', background: '#2b3a67', color: '#fff' }}>
+            <footer style="text-align: center; padding: 2rem 1rem; background: #2b3a67; color: #fff">
               © 2026 Norm VPN. Все права защищены.
             </footer>
-            <div id="exitBanner" className="exit-banner">
+            <div id="exitBanner" class="exit-banner">
               <span>Не уходите! Попробуйте Norm VPN бесплатно 3 дня.</span>
-              <button
-                onClick={() => {
-                  window.location.href = 'https://t.me/normwpn_bot?start=partner_228691787';
-                }}
+              <a
+                href="https://t.me/normwpn_bot?start=partner_228691787"
               >
                 Получить доступ
-              </button>
+              </a>
             </div>
-          </>
-        );
-      }
-      ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
-      // Exit intent banner logic
-      let hasShownBanner = false;
-      function showExitBanner() {
-        if (!hasShownBanner) {
-          const banner = document.getElementById('exitBanner');
-          if (banner) {
-            banner.style.display = 'flex';
-          }
-          hasShownBanner = true;
-        }
-      }
-      document.addEventListener('mouseleave', (e) => {
-        if (e.clientY < 0) {
-          showExitBanner();
-        }
-      });
-    </script>
   </body>
 </html>

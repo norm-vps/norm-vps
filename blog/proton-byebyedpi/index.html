@@ -247,37 +247,21 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <!-- React and Babel -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-      function Page() {
-        const [quizResult, setQuizResult] = React.useState(null);
-        const handleQuiz = (choice) => {
-          setQuizResult(choice);
-        };
-        return (
-          <>
-            <header>
-              <div className="logo">NORM VPN</div>
+<header>
+              <div class="logo">NORM VPN</div>
               <nav>
                 <a href="/norm-vps/">Главная</a>
                 <a href="/norm-vps/blog/">Блог</a>
-                <button
-                  className="cta-btn"
-                  onClick={() => {
-                    window.location.href =
-                      'https://t.me/normwpn_bot?start=partner_228691787';
-                  }}
+                <a
+                  class="cta-btn"
+                  href="https://t.me/normwpn_bot?start=partner_228691787"
                 >
                   3 дня бесплатно
-                </button>
+                </a>
               </nav>
             </header>
-            <section className="hero">
-              <div className="hero-text">
+            <section class="hero">
+              <div class="hero-text">
                 <h1>Proton VPN, ByeByeDPI и V2RayTun: профессиональные инструменты</h1>
                 <p>
                   Помимо популярных коммерческих VPN существуют продвинутые решения
@@ -286,25 +270,19 @@
                   объясним, когда они пригодятся, и сравним их с удобными
                   сервисами Норм VPN и VPNUS.
                 </p>
-                <div className="hero-buttons">
-                  <button
-                    className="service-btn"
-                    onClick={() => {
-                      window.location.href =
-                        'https://t.me/normwpn_bot?start=partner_228691787';
-                    }}
+                <div class="hero-buttons">
+                  <a
+                    class="service-btn"
+                    href="https://t.me/normwpn_bot?start=partner_228691787"
                   >
                     Попробовать Norm VPN
-                  </button>
-                  <button
-                    className="service-btn"
-                    onClick={() => {
-                      window.location.href =
-                        'https://t.me/vpnusvpn_bot?start=invite_246079';
-                    }}
+                  </a>
+                  <a
+                    class="service-btn"
+                    href="https://t.me/vpnusvpn_bot?start=invite_246079"
                   >
                     Попробовать VPNUS
-                  </button>
+                  </a>
                 </div>
               </div>
               <img
@@ -312,7 +290,7 @@
                 alt="Графика VPN"
               />
             </section>
-            <article className="article">
+            <article class="article">
               <h2>Proton VPN: швейцарское качество и функции Secure Core</h2>
               <p>
                 Proton VPN заслужил высокую репутацию благодаря строгой
@@ -439,25 +417,19 @@
                 скорость и полноценную поддержку, не требуя сложной настройки.
               </p>
               <h2>Опрос: какой сервис вам подходит?</h2>
-              <div className="quiz">
-                {quizResult ? (
-                  <p><strong>Результат:</strong> {quizResult}</p>
-                ) : (
-                  <>
-                    <div className="quiz-question">
-                      Какой сценарий лучше описывает ваши задачи?
-                    </div>
-                    <div className="quiz-options">
-                      <button onClick={() => handleQuiz('Proton VPN: серьёзная защита и стриминг')}>Мне нужен безопасный VPN для стриминга и работы</button>
-                      <button onClick={() => handleQuiz('ByeByeDPI: обойти блокировку на ПК')}>Я хочу обойти блокировку сайтов на Windows</button>
-                      <button onClick={() => handleQuiz('V2RayTun: собственный сервер для обхода DPI')}>Я готов настроить свой сервер и экспериментировать</button>
-                      <button onClick={() => handleQuiz('Norm VPN или VPNUS: простое решение для всех устройств')}>Нужен удобный и быстрый VPN без сложностей</button>
-                    </div>
-                  </>
-                )}
+              <div class="quiz">
+                <div class="quiz-question">
+                  Какой сценарий лучше описывает ваши задачи?
+                </div>
+                <div class="quiz-options">
+                  <button type="button">Мне нужен безопасный VPN для стриминга и работы</button>
+                  <button type="button">Я хочу обойти блокировку сайтов на Windows</button>
+                  <button type="button">Я готов настроить свой сервер и экспериментировать</button>
+                  <button type="button">Нужен удобный и быстрый VPN без сложностей</button>
+                </div>
               </div>
               <h2>FAQ</h2>
-              <div className="faq">
+              <div class="faq">
                 <details>
                   <summary>Безопасен ли Proton VPN?</summary>
                   <p>
@@ -552,39 +524,16 @@
                 </details>
               </div>
             </article>
-            <footer style={{ textAlign: 'center', padding: '2rem 1rem', background: '#233973', color: '#fff' }}>
+            <footer style="text-align: center; padding: 2rem 1rem; background: #233973; color: #fff">
               © 2026 Norm VPN. Все права защищены.
             </footer>
-            <div id="exitBanner" className="exit-banner">
+            <div id="exitBanner" class="exit-banner">
               <span>Не уходите! Попробуйте Norm VPN бесплатно 3 дня.</span>
-              <button
-                onClick={() => {
-                  window.location.href = 'https://t.me/normwpn_bot?start=partner_228691787';
-                }}
+              <a
+                href="https://t.me/normwpn_bot?start=partner_228691787"
               >
                 Получить доступ
-              </button>
+              </a>
             </div>
-          </>
-        );
-      }
-      ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
-      // Exit intent banner logic
-      let bannerShown = false;
-      function showExitBanner() {
-        if (!bannerShown) {
-          const banner = document.getElementById('exitBanner');
-          if (banner) {
-            banner.style.display = 'flex';
-          }
-          bannerShown = true;
-        }
-      }
-      document.addEventListener('mouseleave', (e) => {
-        if (e.clientY < 0) {
-          showExitBanner();
-        }
-      });
-    </script>
   </body>
 </html>

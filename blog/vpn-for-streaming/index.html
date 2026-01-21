@@ -366,89 +366,24 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <!-- React and Babel -->
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
-    <script type="text/babel">
-      function StreamingPage() {
-        const [selected, setSelected] = React.useState(null);
-        const [result, setResult] = React.useState('');
-        const [stars, setStars] = React.useState(0);
-        const [bannerVisible, setBannerVisible] = React.useState(false);
-        // Exit intent banner logic
-        React.useEffect(() => {
-          const handleMouseLeave = (e) => {
-            if (e.clientY <= 0) {
-              setBannerVisible(true);
-              document.removeEventListener('mouseleave', handleMouseLeave);
-            }
-          };
-          document.addEventListener('mouseleave', handleMouseLeave);
-          return () => {
-            document.removeEventListener('mouseleave', handleMouseLeave);
-          };
-        }, []);
-
-        const services = ['YouTube', 'Netflix', 'Hulu', 'Disney+', 'Amazon Prime Video', 'BBC iPlayer'];
-        const handleChoice = (index) => {
-          setSelected(index);
-          let message = '';
-          let reward = 0;
-          switch (index) {
-            case 0:
-              message = 'YouTube доступен во многих странах, но некоторые ролики могут быть заблокированы. Выбирайте сервер в США или Японии для максимальной доступности.';
-              reward = 1;
-              break;
-            case 1:
-              message = 'Netflix имеет региональные библиотеки. Чтобы смотреть сериалы из США, подключитесь к серверу в США. Для аниме — выберите Японию. Норм VPN обеспечивает высокую скорость для Ultra HD.';
-              reward = 1;
-              break;
-            case 2:
-              message = 'Hulu работает только в США. Подключитесь к американскому серверу через Норм VPN или VPNUS, чтобы получить доступ к каталогу.';
-              reward = 1;
-              break;
-            case 3:
-              message = 'Disney+ доступен в США, Канаде и нескольких странах Европы. Выбирайте сервер в стране, где сервис доступен, например в Германии или Канаде.';
-              reward = 1;
-              break;
-            case 4:
-              message = 'Amazon Prime Video имеет различные каталоги. Для доступа к оригинальным шоу США выберите американский сервер; для британских — сервер в Великобритании.';
-              reward = 1;
-              break;
-            case 5:
-              message = 'BBC iPlayer доступен только в Великобритании. Подключите VPN к серверу в Лондоне, чтобы смотреть британские передачи.';
-              reward = 1;
-              break;
-            default:
-              message = '';
-          }
-          setResult(message);
-          setStars(stars + reward);
-        };
-
-        return (
-          <>
-            <header>
-              <div className="container nav">
-                <div className="logo" style={{ fontWeight: 700, fontSize: '24px' }}>Норм&nbsp;VPN</div>
-                <nav className="nav-links">
+<header>
+              <div class="container nav">
+                <div class="logo" style="font-weight: 700; font-size: 24px">Норм&nbsp;VPN</div>
+                <nav class="nav-links">
                   <a href="/norm-vps/">Главная</a>
                   <a href="/norm-vps/blog/">Блог</a>
                 </nav>
                 <a
                   href="https://t.me/normwpn_bot?start=partner_228691787"
-                  className="cta-button"
+                  class="cta-button"
                 >
                   3 дня бесплатно
                 </a>
               </div>
             </header>
-            <main className="container">
-              {/* Hero */}
-              <section className="hero">
-                <div className="hero-text">
+            <main class="container">
+              <section class="hero">
+                <div class="hero-text">
                   <h1>VPN для YouTube и потоковых сервисов</h1>
                   <p>
                     Видео‑платформы и стриминговые сервисы могут ограничивать контент в
@@ -457,16 +392,16 @@
                     в вашей стране. Кроме того, он шифрует трафик и защищает
                     конфиденциальность во время просмотра.
                   </p>
-                  <div className="button-group">
+                  <div class="button-group">
                     <a
                       href="https://t.me/normwpn_bot?start=partner_228691787"
-                      className="service-btn norm-btn"
+                      class="service-btn norm-btn"
                     >
                       Попробовать Норм VPN
                     </a>
                     <a
                       href="https://t.me/vpnusvpn_bot?start=invite_246079"
-                      className="service-btn vpnus-btn"
+                      class="service-btn vpnus-btn"
                     >
                       Попробовать VPNUS
                     </a>
@@ -474,8 +409,7 @@
                 </div>
                 <img src="../../assets/hero.png" alt="VPN для стриминга" />
               </section>
-              {/* Article content */}
-              <section className="article-content">
+              <section class="article-content">
                 <h2>Почему для стриминга нужен VPN?</h2>
                 <p>
                   Многие видеосервисы ограничивают доступ к контенту по геолокации.
@@ -504,7 +438,7 @@
                   серверов, поскольку они могут снижать скорость.
                 </p>
                 <h2>Таблица: рекомендуемые серверы для популярных сервисов</h2>
-                <table className="comparison-table">
+                <table class="comparison-table">
                   <thead>
                     <tr>
                       <th>Сервис</th>
@@ -591,27 +525,32 @@
                 </p>
                 <h2>Интерактивный опрос: выберите сервис</h2>
                 <p>Выберите стриминговый сервис — и получите совет, какой сервер лучше использовать. За участие начисляются виртуальные звёзды!</p>
-                <div className="quiz">
+                <div class="quiz">
                   <h3>Какой сервис вы хотите разблокировать?</h3>
-                  {services.map((svc, index) => (
-                    <button
-                      key={index}
-                      className={`choice-${index}`}
-                      onClick={() => handleChoice(index)}
-                    >
-                      {svc}
-                    </button>
-                  ))}
-                  {result && (
-                    <div className="quiz-result">
-                      <p>{result}</p>
-                      <p className="stars">{Array(stars).fill('★').join('')}</p>
-                    </div>
-                  )}
+                  <div class="quiz-options">
+                    <button type="button" class="choice-0">YouTube</button>
+                    <button type="button" class="choice-1">Netflix</button>
+                    <button type="button" class="choice-2">Hulu</button>
+                    <button type="button" class="choice-3">Disney+</button>
+                    <button type="button" class="choice-4">Amazon Prime Video</button>
+                    <button type="button" class="choice-5">BBC iPlayer</button>
+                  </div>
+                  <div class="quiz-result">
+                    <p>Рекомендации по серверам:</p>
+                    <ul>
+                      <li>YouTube: выбирайте сервер в США или Японии для максимальной доступности.</li>
+                      <li>Netflix: подключайтесь к США для американских сериалов или к Японии для аниме; Норм VPN обеспечивает высокую скорость для Ultra HD.</li>
+                      <li>Hulu: работает только в США, поэтому нужен американский сервер.</li>
+                      <li>Disney+: выбирайте страны с доступом к сервису, например Германию или Канаду.</li>
+                      <li>Amazon Prime Video: США для оригинальных шоу или Великобритания для британского каталога.</li>
+                      <li>BBC iPlayer: доступен только в Великобритании, подключайтесь к серверу в Лондоне.</li>
+                    </ul>
+                    <p class="stars">★★★★★</p>
+                  </div>
                 </div>
-                <div className="faq">
+                <div class="faq">
                   <h2>Часто задаваемые вопросы</h2>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как смотреть YouTube без VPN в России?</h3>
                     <p>
                       Многие видео на YouTube доступны без ограничений. Но если
@@ -620,7 +559,7 @@
                       заблокированному контенту.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как установить VPN для YouTube на телефоне?</h3>
                     <p>
                       Скачайте приложение Норм VPN или VPNUS в App Store или Google
@@ -629,7 +568,7 @@
                       через VPN.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Можно ли бесплатно смотреть Netflix с VPN?</h3>
                     <p>
                       Сервисы Netflix, Hulu и Disney+ требуют платной подписки. VPN
@@ -638,7 +577,7 @@
                       активная подписка.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Насколько законно использование VPN для обхода
                     геоблокировок?</h3>
                     <p>
@@ -648,7 +587,7 @@
                       страны, в которой вы находитесь.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как подключить VPN на Smart TV?</h3>
                     <p>
                       Самый удобный способ — установить VPN на роутер. Тогда ваш
@@ -656,7 +595,7 @@
                       некоторых случаях можно использовать медиаплеер с VPN‑приложением.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Какой VPN лучше для YouTube в России?</h3>
                     <p>
                       Норм VPN обеспечивает высокую скорость и множество серверов в
@@ -665,7 +604,7 @@
                       для потокового видео.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Почему Netflix не работает с моим VPN?</h3>
                     <p>
                       Платформы активно блокируют VPN‑серверы. Попробуйте сменить
@@ -673,7 +612,7 @@
                       сервисы чаще обновляют список рабочих серверов.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Может ли VPN снизить качество видео?</h3>
                     <p>
                       При использовании качественного сервиса скорость остаётся
@@ -681,7 +620,7 @@
                       перегруженных или бесплатных серверов.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Стоит ли использовать бесплатный VPN для стриминга?</h3>
                     <p>
                       Бесплатные сервисы часто ограничивают скорость и объём
@@ -689,7 +628,7 @@
                       платными решениями с пробным периодом, например Норм VPN.
                     </p>
                   </div>
-                  <div className="faq-item">
+                  <div class="faq-item">
                     <h3>Как изменить регион в Netflix без VPN?</h3>
                     <p>
                       Некоторые сервисы предлагают переключение регионов внутри
@@ -701,9 +640,8 @@
                 </div>
               </section>
             </main>
-            {/* Exit intent banner */}
-            <div className={`exit-banner ${bannerVisible ? 'show' : ''}`}>
-              <div className="exit-banner-content">
+            <div class="exit-banner show">
+              <div class="exit-banner-content">
                 <h3>Начните смотреть без ограничений!</h3>
                 <p>
                   Попробуйте Норм VPN бесплатно 3 дня и откройте для себя мир
@@ -718,10 +656,5 @@
               © 2026 Norm VPN — анонимность и свобода просмотра. Все права
               защищены.
             </footer>
-          </>
-        );
-      }
-      ReactDOM.render(<StreamingPage />, document.getElementById('root'));
-    </script>
   </body>
 </html>
