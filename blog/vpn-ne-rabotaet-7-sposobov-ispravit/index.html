@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050816" />
+
+    <title>VPN не работает в 2026: 7 способов быстро исправить (Windows, Android, iPhone)</title>
+    <link rel="canonical" href="https://norm-vps.github.io/blog/vpn-ne-rabotaet-7-sposobov-ispravit/" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta
+      name="description"
+      content="VPN не подключается, тормозит, обрывается или не открывает сайты? 7 рабочих способов исправить в 2026: смена сервера и протокола (WireGuard/OpenVPN TCP), обновление, DNS, время, Wi-Fi/моб.интернет, антивирус и брандмауэр. Плюс быстрый мастер диагностики и FAQ."
+    />
+    <meta
+      name="keywords"
+      content="vpn не работает, впн не работает сегодня, vpn не подключается что делать, почему не работает впн, vpn перестал работать, vpn не работает на андроид, vpn не работает на айфоне, vpn не работает windows 10 11, vpn не подключается wifi, сменить сервер vpn, сменить протокол vpn wireguard openvpn tcp, очистить dns кэш ipconfig flushdns, антивирус блокирует vpn, брандмауэр блокирует vpn, vpn низкая скорость, vpn обрывается соединение, какие vpn работают в россии 2026"
+    />
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="VPN не работает в 2026: 7 способов быстро исправить" />
+    <meta
+      property="og:description"
+      content="Пошаговая диагностика и 7 способов восстановить VPN: сервер, протокол, обновление, DNS, время, Wi-Fi/моб.сеть, антивирус/брандмауэр. Таблица симптомов и решений + FAQ."
+    />
+    <meta property="og:image" content="../assets/hero2.png" />
+    <meta property="og:url" content="https://norm-vps.github.io/blog/vpn-ne-rabotaet-7-sposobov-ispravit/" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VPN не работает в 2026: 7 способов быстро исправить" />
+    <meta
+      name="twitter:description"
+      content="VPN не подключается, обрывается или не открывает сайты? Вот 7 решений, которые реально спасают в 2026."
+    />
+    <meta name="twitter:image" content="../assets/hero2.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data: Article -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "VPN не работает в 2026: 7 способов быстро исправить",
+        "description": "Материал помогает восстановить VPN в 2026 году: 7 способов устранить неполадки (сервер, протокол, обновление, DNS, время, сеть, антивирус/брандмауэр), таблица симптомов и решений, мастер диагностики и FAQ.",
+        "image": "https://norm-vps.github.io/assets/hero2.png",
+        "author": { "@type": "Organization", "name": "Норм VPN" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Норм VPN",
+          "logo": { "@type": "ImageObject", "url": "https://norm-vps.github.io/assets/hero2.png" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://norm-vps.github.io/blog/vpn-ne-rabotaet-7-sposobov-ispravit/" },
+        "datePublished": "2026-01-23",
+        "dateModified": "2026-01-23"
+      }
+    </script>
+
+    <!-- Structured data: Breadcrumbs -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://norm-vps.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://norm-vps.github.io/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "VPN не работает: 7 способов исправить", "item": "https://norm-vps.github.io/blog/vpn-ne-rabotaet-7-sposobov-ispravit/" }
+        ]
+      }
+    </script>
+
+    <!-- Structured data: FAQ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Почему VPN не подключается, хотя интернет есть?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Чаще всего причина в блокировке конкретного сервера, перегрузке локации или протокола. Быстрее всего помогает смена сервера и протокола (WireGuard → OpenVPN TCP) и обновление приложения."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что делать, если VPN работает через мобильный интернет, но не работает через Wi-Fi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Так бывает из-за ограничений провайдера домашнего интернета или настроек роутера. Проверьте другой DNS, перезагрузите роутер, смените протокол на OpenVPN TCP и сравните результат."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как понять, что пора менять VPN-сервис?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Если VPN не подключается неделями, постоянно рвётся, скорость падает до уровня «страница грузится вечность» или не открывает популярные сайты даже после смены серверов и протоколов — проще перейти на сервис, который обновляется и адаптируется под блокировки."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно ли вручную настраивать VPN на Windows/Android/iPhone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ручная настройка нужна редко. В Норм VPN и VPNUS всё сведено к простому сценарию: открыть Telegram-бота, выбрать устройство, нажать подключение. Подробные шаги и подсказки уже есть в описаниях ботов."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      :root {
+        --bg1: #0a0f25;
+        --bg2: #0f2255;
+        --card: rgba(255, 255, 255, 0.06);
+        --line: rgba(255, 255, 255, 0.16);
+        --text: #ffffff;
+        --muted: #cfd9f5;
+        --muted2: #dbe2f9;
+        --accent: #00c4ff;
+        --gradA: #7758ff;
+        --gradB: #00c4ff;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        width: 100%;
+        padding: 18px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(10, 15, 37, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+      }
+      .container {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+      .logo {
+        font-weight: 800;
+        font-size: 22px;
+        letter-spacing: 0.2px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        font-weight: 600;
+        transition: color 0.25s ease;
+        opacity: 0.95;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      .cta-button {
+        background: linear-gradient(90deg, var(--gradA) 0%, var(--gradB) 100%);
+        color: #fff;
+        padding: 11px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        white-space: nowrap;
+      }
+      .cta-button:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
+      }
+
+      main {
+        padding: 68px 0 86px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 32px;
+        align-items: start;
+        margin-bottom: 42px;
+      }
+      .hero h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 40px;
+        line-height: 1.15;
+        margin: 0 0 14px;
+      }
+      .hero p {
+        font-size: 18px;
+        color: var(--muted);
+        margin: 0 0 18px;
+      }
+      .hero-note {
+        margin-top: 12px;
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--card);
+        color: var(--muted2);
+        font-size: 14px;
+      }
+      .hero-note a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .button-group {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .service-btn {
+        display: inline-block;
+        padding: 14px 22px;
+        border-radius: 999px;
+        font-weight: 800;
+        color: #fff;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        background: linear-gradient(90deg, var(--gradA) 0%, var(--gradB) 100%);
+      }
+      .vpnus-btn {
+        background: linear-gradient(90deg, var(--gradB) 0%, var(--gradA) 100%);
+      }
+      .service-btn:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
+      }
+
+      .side-card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 18px;
+      }
+      .side-card h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        color: #fff;
+      }
+      .side-card ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted2);
+      }
+      .side-card li {
+        margin: 8px 0;
+      }
+      .mini {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .article {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .toc {
+        margin: 26px 0 34px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 18px;
+      }
+      .toc h2 {
+        margin: 0 0 10px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+      }
+      .toc a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .toc ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted2);
+      }
+      .toc li {
+        margin: 8px 0;
+      }
+
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 30px;
+        margin: 46px 0 14px;
+      }
+      h3 {
+        font-size: 20px;
+        margin: 28px 0 10px;
+        font-weight: 800;
+      }
+      p {
+        margin: 0 0 16px;
+        color: var(--muted2);
+        font-size: 16px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 18px 0 10px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--card);
+        padding: 16px;
+      }
+      .card b {
+        color: #fff;
+      }
+      .pill {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(0, 196, 255, 0.08);
+        color: var(--accent);
+        font-weight: 800;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0 12px;
+      }
+      th,
+      td {
+        padding: 12px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        text-align: left;
+        font-size: 14px;
+      }
+      th {
+        background-color: rgba(0, 196, 255, 0.1);
+        color: var(--accent);
+        font-weight: 800;
+      }
+      tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.04);
+      }
+
+      .steps {
+        margin-top: 16px;
+        display: grid;
+        gap: 12px;
+      }
+      .step {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--card);
+        padding: 16px;
+      }
+      .step .num {
+        font-weight: 900;
+        color: var(--accent);
+        font-size: 13px;
+        letter-spacing: 0.4px;
+      }
+      .step h3 {
+        margin: 6px 0 8px;
+      }
+      .step ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted2);
+      }
+      .step li {
+        margin: 8px 0;
+      }
+
+      .hint {
+        margin: 16px 0 0;
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(119, 88, 255, 0.10);
+        color: var(--muted2);
+        font-size: 14px;
+      }
+
+      .wizard {
+        margin-top: 20px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+      }
+      .wizard h3 {
+        margin-top: 0;
+      }
+      .wizard select {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: rgba(10, 15, 37, 0.55);
+        color: #fff;
+        outline: none;
+        margin: 10px 0 12px;
+      }
+      .wizard button {
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        font-weight: 900;
+        color: #fff;
+        background: linear-gradient(90deg, var(--gradA) 0%, var(--gradB) 100%);
+      }
+      .wizard button:hover {
+        opacity: 0.92;
+      }
+      .wizard .result {
+        margin-top: 14px;
+        color: var(--muted2);
+        font-size: 15px;
+        display: none;
+      }
+
+      .faq {
+        margin-top: 22px;
+      }
+      .faq-item {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--card);
+        padding: 14px 16px;
+        margin: 12px 0;
+      }
+      .faq-item h4 {
+        margin: 0;
+        cursor: pointer;
+        color: var(--accent);
+        font-size: 16px;
+      }
+      .faq-item p {
+        margin-top: 10px;
+        display: none;
+        color: var(--muted2);
+      }
+
+      .related {
+        margin-top: 40px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+        padding: 18px;
+      }
+      .related h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      .related a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .related ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted2);
+      }
+
+      footer {
+        padding: 40px 0;
+        text-align: center;
+        color: #7f8dca;
+        font-size: 14px;
+      }
+
+      /* Exit banner */
+      .exit-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.86);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s;
+      }
+      .exit-banner.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      .exit-banner-content {
+        background: #0f2255;
+        padding: 28px;
+        border-radius: 14px;
+        text-align: center;
+        max-width: 420px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+      .exit-banner-content h3 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        color: var(--accent);
+      }
+      .exit-banner-content p {
+        font-size: 15px;
+        margin-bottom: 16px;
+        color: var(--muted2);
+      }
+      .exit-banner-content a {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--gradA) 0%, var(--gradB) 100%);
+        color: #fff;
+        font-weight: 900;
+      }
+      .exit-banner-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .exit-banner-close:hover {
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      @media (max-width: 920px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        main {
+          padding: 56px 0 72px;
+        }
+        .hero h1 {
+          font-size: 34px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .service-btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="logo">Норм&nbsp;VPN</div>
+
+        <nav class="nav-links">
+          <a href="/">Главная</a>
+          <a href="/blog/">Блог</a>
+        </nav>
+
+        <a href="https://t.me/normwpn_bot?start=partner_228691787" class="cta-button">3 дня бесплатно</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <h1>VPN не работает в 2026: 7 способов быстро исправить</h1>
+          <p>
+            Когда VPN не подключается, не открывает сайты или внезапно «умирает» после обновления — это почти всегда
+            не магия, а конкретная причина: блокировка сервера, протокола, DNS-маршрута или конфликт с защитой системы.
+            Здесь — короткая диагностика и семь решений, которые реально возвращают стабильное соединение.
+          </p>
+
+          <div class="button-group">
+            <a href="https://t.me/normwpn_bot?start=partner_228691787" class="service-btn">
+              Норм VPN — 149 ₽/мес
+            </a>
+            <a href="https://t.me/vpnusvpn_bot?start=invite_246079" class="service-btn vpnus-btn">
+              VPNUS — 199 ₽/мес
+            </a>
+          </div>
+
+          <div class="hero-note">
+            В 2026 блокировки VPN стали плотнее: часть сервисов «сыпется» пачками, и чаще всего выручает связка
+            “рабочие серверы + обновления + протоколы с устойчивостью”.
+            <br />
+            Справка по теме: <a href="https://kod.ru/roskomnadzor-400vpn" target="_blank" rel="noopener noreferrer">новость о блокировках VPN</a>.
+          </div>
+        </div>
+
+        <aside class="side-card">
+          <h3>Самый короткий путь</h3>
+          <ul>
+            <li><b>Никакой ручной настройки.</b> Открываешь Telegram-бота → выбираешь устройство → нажимаешь подключение.</li>
+            <li><b>Инструкции уже готовы.</b> Подробные шаги и подсказки лежат прямо в описаниях ботов.</li>
+            <li><b>Если «штормит» сеть</b> — у тебя всегда есть второй вариант: Норм VPN и VPNUS.</li>
+          </ul>
+          <div class="mini">
+            Обновлено: 23 января 2026
+          </div>
+        </aside>
+      </section>
+
+      <section class="article">
+        <div class="toc">
+          <h2>Навигация по странице</h2>
+          <ul>
+            <li><a href="#quick">Быстрая диагностика за минуту</a></li>
+            <li><a href="#symptoms">Таблица: симптом → причина → решение</a></li>
+            <li><a href="#s1">1) Интернет и сеть</a></li>
+            <li><a href="#s2">2) Смена сервера</a></li>
+            <li><a href="#s3">3) Обновление приложения</a></li>
+            <li><a href="#s4">4) Перезапуск устройства</a></li>
+            <li><a href="#s5">5) Смена протокола (WireGuard / OpenVPN TCP)</a></li>
+            <li><a href="#s6">6) Антивирус и брандмауэр</a></li>
+            <li><a href="#s7">7) Смена VPN-сервиса</a></li>
+            <li><a href="#wizard">Мастер решения проблем</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#links">Перелинковка</a></li>
+          </ul>
+        </div>
+
+        <h2 id="quick">Быстрая диагностика за минуту</h2>
+
+        <div class="cards">
+          <div class="card">
+            <div class="pill">Шаг 1</div>
+            <p><b>Отключите VPN</b> и откройте любой сайт.</p>
+            <p>Если сайт не открывается — проблема в сети/провайдере/роутере, а не в VPN.</p>
+          </div>
+
+          <div class="card">
+            <div class="pill">Шаг 2</div>
+            <p><b>Сравните Wi-Fi и мобильный интернет.</b></p>
+            <p>Если VPN не работает по Wi-Fi, но оживает на мобильной сети — вопрос чаще всего в маршрутизации провайдера или роутере.</p>
+          </div>
+
+          <div class="card">
+            <div class="pill">Шаг 3</div>
+            <p><b>Смените сервер и протокол.</b></p>
+            <p>Серверы банят и перегружают. Протоколы тоже. Переключение часто возвращает жизнь буквально за 10–15 секунд.</p>
+          </div>
+
+          <div class="card">
+            <div class="pill">Шаг 4</div>
+            <p><b>Если нужно быстро и без ручной возни</b> — проще открыть бота.</p>
+            <p>Норм VPN и VPNUS сводят подключение к одному действию — “нажать и пользоваться”.</p>
+          </div>
+        </div>
+
+        <h2 id="symptoms">Таблица: симптом → причина → решение</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Симптом</th>
+              <th>Частая причина</th>
+              <th>Что помогает</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>VPN не подключается</td>
+              <td>Сервер в бане / перегружен / протокол режется</td>
+              <td>Смена сервера, затем протокол WireGuard → OpenVPN TCP</td>
+            </tr>
+            <tr>
+              <td>Сайты не открываются через VPN</td>
+              <td>DNS/маршрут, конфликт защиты, устаревший клиент</td>
+              <td>Обновление, смена DNS, переподключение, очистка DNS-кэша</td>
+            </tr>
+            <tr>
+              <td>Низкая скорость (вплоть до «менее 1 Мбит/с»)</td>
+              <td>Дальний сервер, перегрузка, Wi-Fi шумит</td>
+              <td>Ближний сервер, WireGuard/IKEv2, проверить Wi-Fi</td>
+            </tr>
+            <tr>
+              <td>Соединение обрывается</td>
+              <td>Потери пакетов, роутер, агрессивная фильтрация</td>
+              <td>Переключение сети, OpenVPN TCP, перезагрузка роутера</td>
+            </tr>
+            <tr>
+              <td>На Windows ругается брандмауэр/антивирус</td>
+              <td>VPN-клиент блокируется правилами</td>
+              <td>Разрешить приложение, добавить в исключения</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="hint">
+          Если хочется вообще без ручных шагов: откройте Норм VPN или VPNUS в Telegram — внутри уже есть готовые инструкции под ваше устройство и кнопка подключения.
+        </div>
+
+        <h2 id="s1">1) Проверьте интернет и сеть</h2>
+        <p>
+          Звучит банально, но это главный фильтр реальности: иногда “VPN умер”, а на самом деле упал Wi-Fi, роутер
+          завис, или провайдер устроил свои игры с маршрутом.
+        </p>
+        <ul>
+          <li>Перезагрузите роутер (выключить на 30 секунд и включить).</li>
+          <li>Проверьте сайты без VPN.</li>
+          <li>Сравните Wi-Fi и мобильный интернет.</li>
+        </ul>
+
+        <h2 id="s2">2) Смените сервер VPN</h2>
+        <p>
+          Блокировка конкретного IP и чёрные списки — классика жанра. Один сервер падает, соседний живёт.
+          Важно: иногда помогает не “другая страна”, а просто другая локация внутри той же страны.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div class="num">Действие</div>
+            <h3>Переключение сервера</h3>
+            <ul>
+              <li>Откройте приложение/бот VPN.</li>
+              <li>Выберите другой сервер (лучше географически ближе).</li>
+              <li>Подождите 10–15 секунд после подключения.</li>
+              <li>Если не завелось — попробуйте 3–4 варианта подряд.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="s3">3) Обновите приложение VPN</h2>
+        <p>
+          В 2026 “старый клиент” часто означает “старые методы подключения”. А блокировки обновляются быстрее мемов.
+          Обновление — это не косметика, это выживание.
+        </p>
+        <ul>
+          <li>Android: обновление через магазин приложений.</li>
+          <li>iPhone: обновление через App Store.</li>
+          <li>Windows/macOS: поставить свежую версию клиента.</li>
+        </ul>
+
+        <h2 id="s4">4) Перезагрузите устройство</h2>
+        <p>
+          Перезагрузка — как дождь для пыльного города: смывает конфликт сетевых служб, кэш и залипшие правила.
+          Если VPN не запускается, не подключается или “висит на попытке” — этот шаг часто решает 70% боли.
+        </p>
+
+        <h2 id="s5">5) Измените протокол подключения</h2>
+        <p>
+          В 2026 это один из самых сильных рычагов. Протоколы ведут себя по-разному: где-то быстрее WireGuard,
+          где-то устойчивее OpenVPN TCP, а на мобильных сетях часто стабилен IKEv2.
+        </p>
+        <div class="cards">
+          <div class="card">
+            <div class="pill">Скорость</div>
+            <p><b>WireGuard</b> — обычно самый быстрый и приятный по задержке.</p>
+          </div>
+          <div class="card">
+            <div class="pill">Устойчивость</div>
+            <p><b>OpenVPN TCP</b> — часто вывозит там, где всё “режут” и рвут соединение.</p>
+          </div>
+        </div>
+        <p>
+          Если есть выбор — попробуйте последовательность: WireGuard → OpenVPN UDP → OpenVPN TCP → IKEv2.
+        </p>
+
+        <h2 id="s6">6) Антивирус и брандмауэр: когда защита «перестаралась»</h2>
+        <p>
+          Иногда VPN блокируется не провайдером, а защитой устройства. На Windows особенно любят вмешиваться
+          брандмауэр и антивирус.
+        </p>
+        <ul>
+          <li>Разрешите VPN-клиент в правилах брандмауэра.</li>
+          <li>Добавьте VPN в исключения антивируса.</li>
+          <li>На время проверки можно отключить веб-защиту, затем вернуть обратно.</li>
+        </ul>
+
+        <h2 id="s7">7) Попробуйте другой VPN-сервис</h2>
+        <p>
+          Бывает и так: сервис не успевает адаптироваться, серверная сетка устала, обновления редкие — и вы ловите
+          “не подключается уже неделю”, “постоянно обрывается”, “скорость меньше 1 Мбит/с”.
+          В такие моменты логичнее не геройствовать, а сменить инструмент.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="num">Вариант 1</div>
+            <h3>Норм VPN — универсальный</h3>
+            <p>
+              Подходит для повседневной стабильности, когда важны простота и регулярные обновления.
+              Подключение в один клик через Telegram-бота. Инструкции уже внутри.
+            </p>
+            <div class="button-group">
+              <a href="https://t.me/normwpn_bot?start=partner_228691787" class="service-btn">Открыть Норм VPN</a>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">Вариант 2</div>
+            <h3>VPNUS — акцент на скорость</h3>
+            <p>
+              Когда важны быстрые маршруты и стабильность в динамичных сценариях (включая игры).
+              Тот же принцип: открыл бота → нажал → пользуешься.
+            </p>
+            <div class="button-group">
+              <a href="https://t.me/vpnusvpn_bot?start=invite_246079" class="service-btn vpnus-btn">Открыть VPNUS</a>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="wizard">Мастер решения проблем</h2>
+        <div class="wizard">
+          <h3>Выберите, что именно происходит</h3>
+          <select id="issue">
+            <option value="connect">VPN не подключается</option>
+            <option value="sites">Сайты не открываются через VPN</option>
+            <option value="wifi">Через Wi-Fi не работает, через мобильный интернет работает</option>
+            <option value="slow">Скорость очень низкая</option>
+            <option value="drops">Соединение обрывается</option>
+            <option value="windows">Windows блокирует (антивирус/брандмауэр)</option>
+          </select>
+          <button id="solve">Показать короткое решение</button>
+          <div id="out" class="result"></div>
+        </div>
+
+        <h2 id="faq">FAQ</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <h4>Почему VPN не подключается, хотя интернет есть?</h4>
+            <p>Сначала смените сервер, затем переключите протокол (WireGuard → OpenVPN TCP). Если клиент давно не обновлялся — обновите. Быстрый сценарий без ручных шагов — подключение через Норм VPN или VPNUS в Telegram.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Что делать, если VPN не работает по Wi-Fi?</h4>
+            <p>Перезагрузите роутер, проверьте другой DNS, смените протокол на OpenVPN TCP и сравните результат с мобильной сетью. Если по мобильной сети всё ок — проблема чаще всего в маршруте провайдера или роутере.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Как поднять скорость VPN?</h4>
+            <p>Выберите ближний сервер, переключитесь на WireGuard/IKEv2, проверьте Wi-Fi (сигнал/помехи), сравните скорость без VPN. Если скорости всё равно нет — лучше переключиться на другой сервис.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Нужно ли настраивать VPN вручную?</h4>
+            <p>Редко. В Норм VPN и VPNUS подключение устроено через Telegram-ботов: открыл → выбрал устройство → подключился. Подробные инструкции уже есть в описаниях ботов.</p>
+          </div>
+        </div>
+
+        <div class="related" id="links">
+          <h2>Перелинковка: полезные страницы</h2>
+          <ul>
+            <li><a href="/blog/vpn-troubleshooting/">Решение проблем с VPN: таблицы причин и решений</a></li>
+            <li><a href="/blog/vpn-setup/">Настройка VPN: что важно знать про протоколы</a></li>
+            <li><a href="/blog/vpn-security-privacy/">Безопасность и конфиденциальность: шифрование, no-logs, Kill Switch</a></li>
+            <li><a href="/blog/vpn-news-trends/">Новости и тренды VPN 2025–2026: рынок, запреты, блокировки</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© 2026 Норм VPN. Все права защищены.</div>
+    </footer>
+
+    <div class="exit-banner" id="exit-banner" aria-hidden="true">
+      <div class="exit-banner-content">
+        <button class="exit-banner-close" type="button" aria-label="Закрыть">×</button>
+        <h3>Остаться с рабочим VPN</h3>
+        <p>Если сервис “сыпется”, проще перейти на вариант, который обновляется и держит удар блокировок.</p>
+        <a href="https://t.me/normwpn_bot?start=partner_228691787">Получить 3 дня бесплатно</a>
+      </div>
+    </div>
+
+    <script>
+      // FAQ toggle
+      document.querySelectorAll(".faq-item h4").forEach(function (h) {
+        h.addEventListener("click", function () {
+          var p = this.nextElementSibling;
+          p.style.display = p.style.display === "block" ? "none" : "block";
+        });
+      });
+
+      // Wizard
+      (function () {
+        var issue = document.getElementById("issue");
+        var btn = document.getElementById("solve");
+        var out = document.getElementById("out");
+
+        if (!issue || !btn || !out) return;
+
+        var tips = {
+          connect:
+            "Смените сервер → переключите протокол на OpenVPN TCP → обновите клиент. Если нужно без ручных шагов: откройте Норм VPN или VPNUS в Telegram и подключитесь одной кнопкой.",
+          sites:
+            "Обновите приложение → смените сервер → проверьте DNS (после переподключения) → попробуйте OpenVPN TCP. Если сайты всё равно не открываются — проще сменить сервис.",
+          wifi:
+            "Перезагрузите роутер → проверьте другой DNS → сравните с мобильной сетью → включите OpenVPN TCP. Часто проблема сидит в маршруте провайдера или настройках роутера.",
+          slow:
+            "Выберите ближний сервер → WireGuard/IKEv2 → проверьте Wi-Fi (сигнал/помехи) → сравните скорость без VPN. Если скорость падает до уровня «менее 1 Мбит/с» — пора менять сервис.",
+          drops:
+            "Переключитесь на OpenVPN TCP → попробуйте другую сеть → перезагрузите роутер → выберите ближний сервер. Обрывы часто связаны с потерями пакетов и фильтрацией.",
+          windows:
+            "Разрешите VPN-клиент в брандмауэре и добавьте в исключения антивируса. Если конфликт не ловится быстро — подключение через Telegram-бота обычно проще и стабильнее."
+        };
+
+        btn.addEventListener("click", function () {
+          var v = issue.value;
+          out.textContent = tips[v] || "Попробуйте сменить сервер и протокол, затем обновить приложение.";
+          out.style.display = "block";
+        });
+      })();
+
+      // Exit intent banner
+      (function () {
+        var banner = document.getElementById("exit-banner");
+        if (!banner) return;
+
+        var closeBtn = banner.querySelector(".exit-banner-close");
+        var shown = false;
+
+        function showBanner() {
+          if (shown) return;
+          banner.classList.add("show");
+          banner.setAttribute("aria-hidden", "false");
+          shown = true;
+        }
+
+        if (closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            banner.classList.remove("show");
+            banner.setAttribute("aria-hidden", "true");
+          });
+        }
+
+        document.addEventListener("mouseleave", function (e) {
+          if (e.clientY <= 0) showBanner();
+        });
+      })();
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=106376756", "ym");
+
+      ym(106376756, "init", {
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
+        ecommerce: "dataLayer",
+        accurateTrackBounce: true,
+        trackLinks: true
+      });
+    </script>
+    <noscript>
+      <div>
+        <img src="https://mc.yandex.ru/watch/106376756" style="position: absolute; left: -9999px" alt="" />
+      </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+  </body>
+</html>
