@@ -4,78 +4,163 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Настройка VPN — пошаговые инструкции для Windows, macOS и Linux</title>
+
+    <title>Настройка VPN на Windows, macOS и Linux — протоколы, ошибки, стабильное подключение</title>
     <link rel="canonical" href="https://norm-vps.github.io/blog/vpn-setup/" />
+
     <meta
       name="description"
-      content="Полный гайд по ручной настройке VPN: шаги для Windows, macOS и Linux, сравнение протоколов (OpenVPN, L2TP/IPsec, IKEv2, WireGuard) и советы по выбору."
+      content="Настройка VPN на Windows 10/11, macOS и Linux: выбор протокола (WireGuard, OpenVPN, IKEv2, L2TP/IPsec), защита от утечек DNS/WebRTC, Kill Switch, снижение пинга и решения, когда VPN подключился, но интернет не работает."
     />
     <meta
       name="keywords"
-      content="настройка VPN, как подключить VPN, создать VPN соединение, инструкция VPN Windows, настройка VPN macOS, VPN Linux команда, выбрать протокол VPN, OpenVPN, IKEv2, L2TP"
+      content="настройка vpn, как подключить vpn, создать vpn соединение, vpn windows 10, vpn windows 11, настройка vpn macos, настроить vpn на mac, vpn linux, настроить vpn ubuntu, wireguard настройка, openvpn настройка, ikev2 настройка, l2tp ipsec настройка, vpn не подключается, vpn подключился но сайты не открываются, vpn включен но нет интернета, dns утечка vpn, webrtc утечка, kill switch vpn, split tunneling, снизить пинг vpn"
     />
+
     <meta property="og:type" content="article" />
-    <meta
-      property="og:title"
-      content="Настройка VPN — пошаговые инструкции для Windows, macOS и Linux"
-    />
+    <meta property="og:title" content="Настройка VPN на Windows, macOS и Linux — протоколы, ошибки, стабильное подключение" />
     <meta
       property="og:description"
-      content="Подробные инструкции по настройке VPN‑соединений на разных устройствах, таблица сравнения протоколов и советы по выбору сервиса."
+      content="Понятная настройка VPN на ПК и ноутбуках: протоколы WireGuard/OpenVPN/IKEv2/L2TP, Kill Switch, защита DNS, решения частых ошибок и советы по скорости."
     />
     <meta property="og:url" content="https://norm-vps.github.io/blog/vpn-setup/" />
     <meta property="og:image" content="../assets/hero2.png" />
     <meta property="og:locale" content="ru_RU" />
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Настройка VPN — пошаговые инструкции для Windows, macOS и Linux"
-    />
+    <meta name="twitter:title" content="Настройка VPN на Windows, macOS и Linux" />
     <meta
       name="twitter:description"
-      content="Узнайте, как вручную настроить VPN: Windows, macOS, Linux. Что лучше — OpenVPN, WireGuard, IKEv2 или L2TP/IPsec?"
+      content="WireGuard, OpenVPN, IKEv2, L2TP/IPsec — что выбрать. Почему VPN подключился, а сайты не открываются. Как убрать утечки DNS и стабилизировать скорость."
     />
+    <meta name="twitter:image" content="../assets/hero2.png" />
+
+    <!-- Favicon (у тебя уже загружены) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Настройка VPN — пошаговые инструкции для Windows, macOS и Linux",
-        "author": { "@type": "Person", "name": "Norm VPN" },
-        "datePublished": "2026-01-21",
-        "image": "../assets/hero2.png",
+        "headline": "Настройка VPN на Windows, macOS и Linux — протоколы, ошибки, стабильное подключение",
+        "description": "Материал о подключении VPN на Windows 10/11, macOS и Linux: выбор протокола WireGuard/OpenVPN/IKEv2/L2TP, базовые параметры безопасности, Kill Switch, защита от утечек DNS/WebRTC и решения частых проблем.",
+        "image": "https://norm-vps.github.io/assets/hero2.png",
+        "author": { "@type": "Organization", "name": "Norm VPN" },
         "publisher": {
           "@type": "Organization",
           "name": "Norm VPN",
-          "logo": { "@type": "ImageObject", "url": "../assets/hero.png" }
+          "logo": { "@type": "ImageObject", "url": "https://norm-vps.github.io/assets/hero.png" }
         },
-        "description": "Пошаговые инструкции по настройке VPN на Windows, macOS и Linux, сравнение протоколов и советы по выбору надёжного сервиса."
+        "datePublished": "2026-01-21",
+        "dateModified": "2026-01-23",
+        "mainEntityOfPage": "https://norm-vps.github.io/blog/vpn-setup/"
       }
     </script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://norm-vps.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://norm-vps.github.io/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Настройка VPN", "item": "https://norm-vps.github.io/blog/vpn-setup/" }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Почему VPN подключился, но интернет не работает?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Чаще всего причина в DNS или маршрутизации: помогает смена сервера, другой протокол (например, WireGuard вместо L2TP), включение защиты DNS, перезапуск сети и проверка, что в системе не остался старый прокси."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как убрать утечки DNS и WebRTC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Включите защиту DNS в приложении VPN, используйте системный Kill Switch и отключите WebRTC-утечки в браузере. После этого проверьте, не подменяются ли DNS провайдером."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что выбрать: WireGuard, OpenVPN или IKEv2?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "WireGuard обычно даёт лучшую скорость и стабильность, OpenVPN универсален и хорошо переживает нестабильные сети, IKEv2 удобен на ноутбуках и мобильных устройствах благодаря быстрому переподключению."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Зачем нужен Kill Switch?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kill Switch блокирует интернет при разрыве туннеля, чтобы реальный IP и трафик не утекли в момент, когда соединение с сервером на секунду просело."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли снизить пинг с VPN?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Иногда — да: помогает ближняя локация, стабильный маршрут и правильный протокол. Для игр часто выигрывает WireGuard/AmneziaWG и серверы с хорошей связностью."
+            }
+          }
+        ]
+      }
+    </script>
+
     <style>
+      :root {
+        --bg1: #0a0f25;
+        --bg2: #0f2255;
+        --card: rgba(255, 255, 255, 0.06);
+        --card2: rgba(255, 255, 255, 0.08);
+        --stroke: rgba(255, 255, 255, 0.14);
+        --text: #ffffff;
+        --muted: #cfd9f5;
+        --muted2: #dbe2f9;
+        --accent: #00c4ff;
+        --gradA: #7758ff;
+        --gradB: #00c4ff;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      * { box-sizing: border-box; }
       body {
         margin: 0;
         font-family: 'Inter', sans-serif;
-        background: linear-gradient(180deg, #0a0f25 0%, #0f2255 100%);
-        color: #ffffff;
-        line-height: 1.6;
+        background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+        color: var(--text);
+        line-height: 1.7;
       }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+      a { color: inherit; text-decoration: none; }
       header {
         width: 100%;
-        padding: 20px 0;
+        padding: 18px 0;
         position: sticky;
         top: 0;
         z-index: 1000;
-        background: rgba(10, 15, 37, 0.9);
+        background: rgba(10, 15, 37, 0.88);
         backdrop-filter: blur(10px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
       }
       .container {
         width: 100%;
@@ -87,227 +172,264 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 16px;
       }
-      .nav-links {
-        display: flex;
-        gap: 24px;
-      }
-      .nav-links a {
-        font-weight: 600;
-        transition: color 0.3s ease;
-      }
-      .nav-links a:hover {
-        color: #00c4ff;
-      }
+      .logo { font-weight: 800; font-size: 22px; letter-spacing: 0.2px; }
+      .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+      .nav-links a { font-weight: 600; opacity: 0.95; transition: color 0.25s ease, opacity 0.25s ease; }
+      .nav-links a:hover { color: var(--accent); opacity: 1; }
       .cta-button {
-        background: linear-gradient(90deg, #7758ff 0%, #00c4ff 100%);
-        color: #ffffff;
-        padding: 12px 24px;
-        border-radius: 24px;
-        font-weight: 600;
-        transition: opacity 0.3s ease;
+        background: linear-gradient(90deg, var(--gradA) 0%, var(--gradB) 100%);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        white-space: nowrap;
       }
-      .cta-button:hover {
-        opacity: 0.9;
-      }
-      main {
-        padding: 80px 0;
-      }
+      .cta-button:hover { opacity: 0.95; transform: translateY(-1px); }
+
+      main { padding: 72px 0 40px; }
+
       .hero {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-bottom: 60px;
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 34px;
+        align-items: start;
+        margin-bottom: 36px;
       }
-      .hero-text h1,
       .hero h1 {
         font-family: 'Montserrat', sans-serif;
         font-size: 40px;
-        font-weight: 700;
-        margin-bottom: 20px;
+        line-height: 1.15;
+        margin: 0 0 14px;
       }
-      .hero-text p,
-      .hero p {
-        font-size: 18px;
-        color: #cfd9f5;
-        margin-bottom: 24px;
+      .hero p { margin: 0 0 18px; color: var(--muted); font-size: 18px; }
+
+      .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+      .chip {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(0, 196, 255, 0.08);
+        border: 1px solid rgba(0, 196, 255, 0.18);
+        color: #dff7ff;
+        font-size: 13px;
+        font-weight: 600;
       }
-      .button-group,
-      .buttons {
-        margin-top: 32px;
+
+      .button-group {
+        margin-top: 18px;
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 14px;
       }
-      .service-btn,
-      .cta-btn {
-        display: inline-block;
-        padding: 14px 28px;
-        border-radius: 28px;
-        font-weight: 600;
-        color: #ffffff;
-        transition: opacity 0.3s ease;
-        background: linear-gradient(90deg, #7758ff 0%, #00c4ff 100%);
+      .service-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 18px;
+        border-radius: 999px;
+        font-weight: 800;
+        color: #fff;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        min-width: 220px;
       }
-      .norm-btn {
-        background: linear-gradient(90deg, #7758ff 0%, #00c4ff 100%);
+      .service-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+      .norm-btn { background: linear-gradient(90deg, var(--gradA) 0%, var(--gradB) 100%); }
+      .vpnus-btn { background: linear-gradient(90deg, var(--gradB) 0%, var(--gradA) 100%); }
+
+      .hero-card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: var(--shadow);
       }
-      .vpnus-btn {
-        background: linear-gradient(90deg, #00c4ff 0%, #7758ff 100%);
-      }
-      .service-btn:hover,
-      .cta-btn:hover {
-        opacity: 0.9;
-      }
-      .article-content h2,
-      .article-container h2 {
+      .hero-card h2 {
         font-family: 'Montserrat', sans-serif;
-        font-size: 32px;
-        margin-top: 40px;
-        margin-bottom: 16px;
+        font-size: 18px;
+        margin: 0 0 10px;
       }
-      .article-content h3,
-      .article-container h3 {
-        font-size: 22px;
-        margin-top: 30px;
-        margin-bottom: 12px;
+      .hero-card p { margin: 0 0 12px; color: var(--muted2); font-size: 14px; }
+      .quick-list { margin: 0; padding-left: 18px; color: var(--muted2); }
+      .quick-list li { margin: 8px 0; }
+
+      .toc {
+        margin-top: 26px;
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        padding: 18px;
+      }
+      .toc-title {
+        font-weight: 800;
+        margin: 0 0 10px;
+        color: #eaf0ff;
+      }
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 14px;
+      }
+      .toc a {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.10);
+        color: #e9eeff;
         font-weight: 600;
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
-      .article-content p,
-      .article-container p {
-        margin-bottom: 18px;
-        font-size: 16px;
-        color: #dbe2f9;
-      }
-      .article-content ul,
-      .article-container ul {
-        margin-bottom: 18px;
-        padding-left: 20px;
-      }
-      .article-content li,
-      .article-container li {
-        margin-bottom: 8px;
-      }
-      .article-content,
-      .article-container {
+      .toc a:hover { transform: translateY(-1px); border-color: rgba(0,196,255,0.28); }
+
+      article {
         max-width: 980px;
         margin: 0 auto;
+        padding-top: 10px;
       }
-      .comparison-table,
-      .article-content table,
-      .article-container table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        margin-bottom: 20px;
+
+      .section {
+        margin-top: 42px;
+        padding-top: 10px;
       }
-      .comparison-table th,
-      .comparison-table td,
-      .article-content th,
-      .article-content td,
-      .article-container th,
-      .article-container td {
-        padding: 12px 16px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        text-align: left;
-        font-size: 14px;
-      }
-      .comparison-table th,
-      .article-content th,
-      .article-container th {
-        background-color: rgba(0, 196, 255, 0.1);
-        color: #00c4ff;
-        font-weight: 600;
-      }
-      .comparison-table tr:nth-child(even),
-      .article-content tr:nth-child(even),
-      .article-container tr:nth-child(even) {
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-      /* FAQ */
-      .faq {
-        margin-top: 60px;
-      }
-      .faq h2 {
+      h2 {
         font-family: 'Montserrat', sans-serif;
         font-size: 30px;
-        margin-bottom: 20px;
+        margin: 0 0 14px;
       }
-      .faq-item {
-        margin-bottom: 20px;
-      }
-      .faq-item h3 {
+      h3 {
         font-size: 20px;
-        margin-bottom: 8px;
-        color: #00c4ff;
+        margin: 22px 0 10px;
+        font-weight: 800;
       }
-      .faq-item p {
+      p { margin: 0 0 14px; color: var(--muted2); font-size: 16px; }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 18px;
+        padding: 18px;
+        margin: 16px 0;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .note {
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: rgba(0,196,255,0.08);
+        border: 1px solid rgba(0,196,255,0.18);
+        color: #dff7ff;
+        font-weight: 600;
+      }
+
+      .steps {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted2);
+      }
+      .steps li { margin: 10px 0; }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0 6px;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+      }
+      th, td {
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        vertical-align: top;
         font-size: 14px;
-        color: #cfd9f5;
       }
+      th {
+        background: rgba(0, 196, 255, 0.10);
+        color: var(--accent);
+        font-weight: 800;
+        text-align: left;
+      }
+      tr:nth-child(even) td { background: rgba(255, 255, 255, 0.04); }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .pill {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.12);
+        color: #eaf0ff;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      .faq {
+        margin-top: 18px;
+      }
+      details {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 14px;
+        padding: 12px 14px;
+        margin: 10px 0;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 800;
+        color: #eaf0ff;
+      }
+      details p { margin: 10px 0 0; color: var(--muted2); }
+
+      .internal-links {
+        margin-top: 46px;
+        padding: 22px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 18px;
+      }
+      .internal-links h3 { margin: 0 0 12px; color: var(--accent); }
+      .internal-links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+      .internal-link-card {
+        display: block;
+        padding: 16px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 14px;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+      .internal-link-card:hover { transform: translateY(-2px); border-color: rgba(0,196,255,0.24); }
+      .internal-link-card h4 { margin: 0 0 6px; color: var(--accent); font-size: 16px; }
+      .internal-link-card p { margin: 0; font-size: 14px; color: var(--muted); }
+
       footer {
-        padding: 40px 0;
+        padding: 38px 0;
         text-align: center;
         color: #7f8dca;
         font-size: 14px;
       }
-      /* Quiz styles */
-      .quiz,
-      .quiz-container {
-        margin-top: 40px;
-        padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-      .quiz h3,
-      .quiz-container h3 {
-        margin-top: 0;
-        margin-bottom: 12px;
-        font-size: 22px;
-        font-family: 'Montserrat', sans-serif;
-      }
-      .quiz button,
-      .quiz-container button {
-        display: inline-block;
-        margin: 6px 6px;
-        padding: 10px 20px;
-        border-radius: 20px;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-        color: #ffffff;
-      }
-      .quiz button.choice-0 {
-        background-color: #7758ff;
-      }
-      .quiz button.choice-1 {
-        background-color: #007aff;
-      }
-      .quiz button.choice-2 {
-        background-color: #009f7f;
-      }
-      .quiz button.choice-3 {
-        background-color: #d97706;
-      }
-      .quiz-result {
-        margin-top: 16px;
-        font-size: 16px;
-        color: #cfd9f5;
-      }
-      .stars {
-        color: #ffd700;
-        font-size: 20px;
-      }
+
       /* Exit banner */
       .exit-banner {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
         background: rgba(0, 0, 0, 0.85);
         display: flex;
         align-items: center;
@@ -315,224 +437,548 @@
         z-index: 2000;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.4s ease, visibility 0.4s;
+        transition: opacity 0.35s ease, visibility 0.35s;
       }
-      .exit-banner.show {
-        opacity: 1;
-        visibility: visible;
-      }
+      .exit-banner.show { opacity: 1; visibility: visible; }
       .exit-banner-content {
         background: #0f2255;
-        padding: 30px;
-        border-radius: 12px;
+        padding: 28px;
+        border-radius: 16px;
         text-align: center;
-        max-width: 400px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        max-width: 420px;
+        box-shadow: var(--shadow);
         position: relative;
+        border: 1px solid rgba(255,255,255,0.14);
       }
       .exit-banner-content h3 {
-        margin-top: 0;
-        margin-bottom: 16px;
-        font-size: 26px;
-        color: #00c4ff;
+        margin: 0 0 12px;
+        font-size: 24px;
+        color: var(--accent);
+        font-family: 'Montserrat', sans-serif;
       }
-      .exit-banner-content p {
-        font-size: 16px;
-        margin-bottom: 20px;
-        color: #cfd9f5;
-      }
+      .exit-banner-content p { margin: 0 0 16px; color: var(--muted); }
       .exit-banner-content a {
         display: inline-block;
-        padding: 12px 24px;
-        border-radius: 24px;
-        background: linear-gradient(90deg, #7758ff 0%, #00c4ff 100%);
-        color: #ffffff;
-        font-weight: 600;
-        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--gradA) 0%, var(--gradB) 100%);
+        color: #fff;
+        font-weight: 800;
       }
       .exit-banner-close {
         position: absolute;
-        top: 12px;
-        right: 12px;
-        width: 32px;
-        height: 32px;
+        top: 10px; right: 10px;
+        width: 34px; height: 34px;
         border-radius: 50%;
         border: none;
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
+        background: rgba(255,255,255,0.10);
+        color: #fff;
         font-size: 22px;
         line-height: 1;
         cursor: pointer;
       }
-      .exit-banner-close:hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
-      @media (max-width: 768px) {
-        main {
-          padding: 60px 0;
-        }
-        .hero {
-          flex-direction: column;
-          text-align: center;
-        }
-        .hero img {
-          margin-top: 20px;
-          max-width: 100%;
-        }
-        .button-group,
-        .buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-        .service-btn,
-        .cta-btn {
-          width: 100%;
-          text-align: center;
-        }
-        .quiz button,
-        .quiz-container button {
-          width: 100%;
-          margin: 6px 0;
-        }
-        .exit-banner-content {
-          width: 90%;
-        position: relative;
-        }
+      .exit-banner-close:hover { background: rgba(255,255,255,0.18); }
+
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; }
+        .toc-grid { grid-template-columns: 1fr; }
+        .grid-2 { grid-template-columns: 1fr; }
+        .hero h1 { font-size: 34px; }
+        main { padding: 58px 0 34px; }
+        .service-btn { width: 100%; min-width: 0; }
       }
     </style>
-  
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Главная",
-      "item": "https://norm-vps.github.io/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Блог",
-      "item": "https://norm-vps.github.io/blog/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Настройка VPN — пошаговые инструкции для Windows, macOS и Linux",
-      "item": "https://norm-vps.github.io/blog/vpn-setup/"
-    }
-  ]
-}
-    </script>
   </head>
+
   <body>
     <header>
       <div class="container nav">
-        <div class="logo" style="font-weight: 700; font-size: 24px;">Норм&nbsp;VPN</div>
+        <div class="logo">Норм&nbsp;VPN</div>
+
         <nav class="nav-links">
           <a href="/">Главная</a>
           <a href="/blog/">Блог</a>
         </nav>
+
         <a href="https://t.me/normwpn_bot?start=partner_228691787" class="cta-button">3 дня бесплатно</a>
       </div>
     </header>
+
     <main class="container">
       <section class="hero">
-        <div class="hero-text">
-          <h1>Настройка VPN — пошаговые инструкции</h1>
+        <div>
+          <h1>Настройка VPN на Windows, macOS и Linux — без нервов и плясок с настройками</h1>
           <p>
-            Подробное руководство по настройке VPN на различных устройствах и операционных системах. 
-            Узнайте, как правильно настроить VPN-соединение для максимальной безопасности и производительности.
+            Иногда достаточно одного клика, чтобы туннель встал ровно, а интернет перестал «переобуваться» на каждом шагу.
+            Для этого и существуют Норм VPN и VPNUS: открыл бот в Telegram, нажал кнопку, подключился и пошёл по делам.
           </p>
+
+          <div class="chips" aria-label="Ключевые темы">
+            <span class="chip">Windows 10/11</span>
+            <span class="chip">macOS</span>
+            <span class="chip">Linux / Ubuntu</span>
+            <span class="chip">WireGuard</span>
+            <span class="chip">OpenVPN</span>
+            <span class="chip">IKEv2</span>
+            <span class="chip">Kill Switch</span>
+            <span class="chip">DNS / утечки</span>
+          </div>
+
           <div class="button-group">
-            <a href="https://t.me/normwpn_bot?start=partner_228691787" class="service-btn norm-btn">
-              Попробовать Норм VPN
+            <a class="service-btn norm-btn" href="https://t.me/normwpn_bot?start=partner_228691787" target="_blank" rel="noopener noreferrer">
+              Норм VPN — 149 ₽/мес
             </a>
-            <a href="https://t.me/vpnusvpn_bot?start=invite_246079" class="service-btn vpnus-btn">
-              Попробовать VPNUS
+            <a class="service-btn vpnus-btn" href="https://t.me/vpnusvpn_bot?start=invite_246079" target="_blank" rel="noopener noreferrer">
+              VPNUS — 199 ₽/мес
             </a>
           </div>
+
+          <div class="toc" aria-label="Оглавление">
+            <div class="toc-title">Быстрая навигация</div>
+            <div class="toc-grid">
+              <a href="#fast-start">Быстрый старт</a>
+              <a href="#protocols">Протоколы и выбор</a>
+              <a href="#windows">Windows 10/11</a>
+              <a href="#macos">macOS</a>
+              <a href="#linux">Linux / Ubuntu</a>
+              <a href="#fixes">Если не работает</a>
+              <a href="#leaks">DNS и WebRTC</a>
+              <a href="#faq">FAQ</a>
+            </div>
+          </div>
         </div>
+
+        <aside class="hero-card">
+          <h2>Смысл страницы</h2>
+          <p>
+            Тут собраны рабочие сценарии: подключение, выбор сервера, контроль утечек, Kill Switch,
+            плюс решения, когда VPN подключился, но сайты не открываются.
+          </p>
+          <ul class="quick-list">
+            <li>Нужен стабильный интернет — берём WireGuard или IKEv2</li>
+            <li>Нужно пережить капризную сеть — OpenVPN спасает</li>
+            <li>Нужна защита от «вспышек» — включаем Kill Switch</li>
+            <li>Нужна скорость — выбираем ближнюю локацию и нормальный маршрут</li>
+          </ul>
+        </aside>
       </section>
-      <article class="article-content">
-        <h2>Настройка VPN на Windows</h2>
-        <p>
-          Для настройки VPN на Windows можно использовать встроенные средства системы или специальные приложения. 
-          Норм VPN и VPNUS предоставляют удобные клиенты для Windows, которые автоматически настраивают соединение.
-        </p>
-        <h2>Настройка VPN на macOS</h2>
-        <p>
-          На macOS VPN можно настроить через системные настройки или использовать специализированные приложения. 
-          Оба сервиса — Норм VPN и VPNUS — имеют нативные приложения для macOS с простым интерфейсом.
-        </p>
-        <h2>Настройка VPN на Linux</h2>
-        <p>
-          На Linux VPN настраивается через командную строку или графические интерфейсы. 
-          WireGuard и OpenVPN — наиболее популярные протоколы для Linux-систем.
-        </p>
-        <h2>Заключение</h2>
-        <p>
-          Правильная настройка VPN обеспечивает безопасность и стабильность соединения. 
-          Норм VPN и VPNUS предлагают простые в использовании приложения, которые автоматически 
-          настраивают оптимальные параметры соединения.
-        </p>
+
+      <article>
+        <section id="fast-start" class="section">
+          <h2>Быстрый старт: подключение за минуту</h2>
+          <p>
+            Норм VPN и VPNUS решают типовую историю с ручной настройкой: профили, конфигурации, сертификаты, маршруты —
+            всё это остаётся «за кадром». В Telegram-ботах уже лежат подробные инструкции и кнопки подключения.
+          </p>
+
+          <div class="grid-2">
+            <div class="card">
+              <h3>Норм VPN — для повседневной защиты</h3>
+              <p>
+                Подходит для стабильного соединения, приватности, браузера, мессенджеров и аккуратной работы в сетях,
+                где трафик любят “проверять на прочность”.
+              </p>
+              <div class="pill-row">
+                <span class="pill">149 ₽/мес</span>
+                <span class="pill">быстрое подключение</span>
+                <span class="pill">защита DNS</span>
+                <span class="pill">Kill Switch</span>
+              </div>
+
+              <div style="height: 14px"></div>
+
+              <a class="service-btn norm-btn" href="https://t.me/normwpn_bot?start=partner_228691787" target="_blank" rel="noopener noreferrer">
+                Открыть Норм VPN в Telegram
+              </a>
+            </div>
+
+            <div class="card">
+              <h3>VPNUS — когда важны скорость и пинг</h3>
+              <p>
+                Логика простая: стабильные маршруты, удобный выбор локаций и протоколы, которые держатся даже там,
+                где соединение пытаются «припарковать».
+              </p>
+              <div class="pill-row">
+                <span class="pill">199 ₽/мес</span>
+                <span class="pill">игровые сценарии</span>
+                <span class="pill">быстрые протоколы</span>
+                <span class="pill">стабильность</span>
+              </div>
+
+              <div style="height: 14px"></div>
+
+              <a class="service-btn vpnus-btn" href="https://t.me/vpnusvpn_bot?start=invite_246079" target="_blank" rel="noopener noreferrer">
+                Открыть VPNUS в Telegram
+              </a>
+            </div>
+          </div>
+
+          <div style="height: 14px"></div>
+
+          <div class="note">
+            Если цель — просто пользоваться интернетом без сюрпризов: подключение через бота занимает меньше времени, чем чтение половины инструкций в интернете.
+          </div>
+        </section>
+
+        <section id="protocols" class="section">
+          <h2>Протоколы VPN: WireGuard, OpenVPN, IKEv2, L2TP/IPsec — чем отличаются</h2>
+          <p>
+            Протокол — это «характер» соединения. Один про скорость, другой про устойчивость, третий про совместимость.
+            Путаница обычно начинается, когда скорость нормальная, а потом внезапно VPN обрывается или сайты открываются через раз.
+          </p>
+
+          <div class="card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Протокол</th>
+                  <th>Сильные стороны</th>
+                  <th>Когда выбирать</th>
+                  <th>Что может бесить</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>WireGuard</strong></td>
+                  <td>Скорость, стабильность, быстрый старт</td>
+                  <td>Повседневные задачи, видео, игры, ноутбук</td>
+                  <td>Иногда нужны правильные DNS/MTU в сложных сетях</td>
+                </tr>
+                <tr>
+                  <td><strong>OpenVPN</strong></td>
+                  <td>Совместимость, гибкость, хорошо переживает нестабильные сети</td>
+                  <td>Wi-Fi «на честном слове», сложные провайдеры, когда WireGuard капризничает</td>
+                  <td>Чуть больше нагрузки, иногда ниже скорость</td>
+                </tr>
+                <tr>
+                  <td><strong>IKEv2</strong></td>
+                  <td>Быстрое переподключение, удобно в поездках</td>
+                  <td>Ноутбук, частые смены сети, мобильные точки доступа</td>
+                  <td>Зависит от реализации и настроек сети</td>
+                </tr>
+                <tr>
+                  <td><strong>L2TP/IPsec</strong></td>
+                  <td>Встроенная поддержка во многих системах</td>
+                  <td>Если нет других вариантов или нужен старый совместимый режим</td>
+                  <td>Чаще режется, может быть нестабилен, морально устарел</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            В Норм VPN и VPNUS протоколы и локации подбираются проще: выбираешь сценарий и подключаешься.
+            А если хочется «покрутить ручки» — в ботах лежат подсказки, какие параметры включить и какой режим выбрать.
+          </p>
+        </section>
+
+        <section id="windows" class="section">
+          <h2>Windows 10/11: подключение, профиль, типовые ошибки</h2>
+          <p>
+            Windows умеет работать с VPN через приложения и через встроенные профили подключения. На практике удобнее то,
+            что не заставляет копаться в параметрах сети после каждого обновления.
+          </p>
+
+          <div class="card">
+            <h3>Сценарий «просто работает»</h3>
+            <ol class="steps">
+              <li>Открой Telegram-бот Норм VPN или VPNUS.</li>
+              <li>Выбери устройство Windows и следуй коротким шагам из бота.</li>
+              <li>Подключись к ближайшей локации или к серверу под нужную задачу.</li>
+              <li>Проверь, что соединение стабильное: сайты открываются, скорость ровная, без обрывов.</li>
+            </ol>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <h3>Когда скорость проседает</h3>
+              <p>
+                Часто спасает смена локации на ближнюю (география решает), другой протокол и отключение «тяжёлых»
+                расширений в браузере. Для игр обычно лучше быстрые режимы и сервер с нормальным маршрутом.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Когда VPN подключился, а сайты не открываются</h3>
+              <p>
+                Это классика: DNS, прокси, остатки старых сетевых правил. Обычно помогает смена сервера,
+                переключение WireGuard/OpenVPN, включение защиты DNS и перезапуск сети.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="macos" class="section">
+          <h2>macOS: стабильное соединение и быстрые переподключения</h2>
+          <p>
+            macOS хорошо чувствует себя с IKEv2 и современными режимами. Важный момент — чтобы при смене Wi-Fi/раздачи
+            соединение не «роняло» реальный IP и не делало паузу в трафике.
+          </p>
+
+          <div class="card">
+            <h3>Сценарий для поездок и ноутбука</h3>
+            <ol class="steps">
+              <li>Подключись через Норм VPN или VPNUS и выбери сервер ближе к твоей реальной локации.</li>
+              <li>Включи автоподключение, если часто меняешь сети.</li>
+              <li>Активируй Kill Switch, чтобы случайный разрыв не открыл трафик наружу.</li>
+            </ol>
+          </div>
+
+          <div class="note">
+            Если мессенджеры открываются, а часть сайтов “думает вечность”, почти всегда виноваты DNS и маршрутизация — проще переключить сервер и режим в пару тапов.
+          </div>
+        </section>
+
+        <section id="linux" class="section">
+          <h2>Linux / Ubuntu: WireGuard и OpenVPN без боли</h2>
+          <p>
+            На Linux любят два сценария: через NetworkManager или через командную строку. В жизни важнее другое:
+            чтобы рукопожатие проходило стабильно, а DNS не улетал обратно к провайдеру.
+          </p>
+
+          <div class="grid-2">
+            <div class="card">
+              <h3>WireGuard на Ubuntu</h3>
+              <p>
+                Обычно это самый быстрый и ровный вариант: меньше накладных расходов, понятная логика соединения,
+                стабильная скорость. Если рукопожатие не проходит — дело часто в маршруте или MTU.
+              </p>
+              <div class="pill-row">
+                <span class="pill">быстрая скорость</span>
+                <span class="pill">стабильность</span>
+                <span class="pill">низкая задержка</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>OpenVPN на Linux</h3>
+              <p>
+                OpenVPN ценят за универсальность: он живучий, терпеливый и часто запускается там, где другие режимы
+                капризничают. Если сеть «сложная», этот вариант может оказаться самым спокойным.
+              </p>
+              <div class="pill-row">
+                <span class="pill">совместимость</span>
+                <span class="pill">гибкость</span>
+                <span class="pill">устойчивость</span>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Детальные шаги установки и параметры подключения удобнее брать из Telegram-ботов Норм VPN и VPNUS:
+            там уже учтены типовые нюансы Linux, чтобы не превращать вечер в археологию логов.
+          </p>
+        </section>
+
+        <section id="fixes" class="section">
+          <h2>Если не работает: быстрые причины и решения</h2>
+          <p>
+            Самые частые сценарии выглядят одинаково: VPN не подключается, подключился — но нет интернета,
+            скорость упала, пинг стал выше, сайты открываются через раз, видео грузится рывками.
+          </p>
+
+          <div class="card">
+            <h3>10 ситуаций, которые встречаются чаще всего</h3>
+            <ol class="steps">
+              <li><strong>VPN подключился, но сайты не открываются</strong> — переключи сервер и протокол, включи защиту DNS, перезапусти сеть.</li>
+              <li><strong>VPN включён, но “нет интернета”</strong> — проверь, не включён ли старый прокси, и нет ли ограничений в брандмауэре.</li>
+              <li><strong>Скорость просела</strong> — выбери ближнюю локацию, попробуй WireGuard/IKEv2, убери фоновые загрузки.</li>
+              <li><strong>Высокий пинг</strong> — меняй локацию на ближайшую к игровому региону, избегай перегруженных маршрутов.</li>
+              <li><strong>Соединение обрывается</strong> — включи Kill Switch, попробуй OpenVPN (часто устойчивее), смени Wi-Fi.</li>
+              <li><strong>Часть сервисов “режется”</strong> — смена протокола и сервера обычно решает, особенно при фильтрации трафика.</li>
+              <li><strong>В общественном Wi-Fi не заводится</strong> — попробуй OpenVPN и другой порт/режим, либо смени сеть.</li>
+              <li><strong>Сайты определяют неправильную страну</strong> — проверь выбранную локацию и перезапусти браузер.</li>
+              <li><strong>Тормозит видео</strong> — ближний сервер + стабильный протокол + отключение лишних расширений.</li>
+              <li><strong>Подозрение на утечки</strong> — включи защиту DNS и Kill Switch, проверь WebRTC в браузере.</li>
+            </ol>
+          </div>
+
+          <div class="note">
+            Когда нужно решение “прямо сейчас”, удобнее не перебирать настройки вручную, а просто переключить локацию/режим в Норм VPN или VPNUS — и ехать дальше.
+          </div>
+        </section>
+
+        <section id="leaks" class="section">
+          <h2>DNS и WebRTC: как не «светить» лишнее</h2>
+          <p>
+            Даже при хорошем соединении иногда остаются утечки: браузер отдаёт лишние данные, DNS уходит к провайдеру,
+            а реальный IP появляется в редких моментах при нестабильной сети.
+          </p>
+
+          <div class="grid-2">
+            <div class="card">
+              <h3>Защита DNS</h3>
+              <p>
+                Если DNS уходит “мимо туннеля”, часть запросов видит провайдер. Включённая защита DNS и корректный режим
+                решают это заметно быстрее, чем бесконечные ручные правки.
+              </p>
+            </div>
+            <div class="card">
+              <h3>WebRTC в браузере</h3>
+              <p>
+                WebRTC иногда раскрывает сетевые данные в браузере. Это не “магия взлома”, а настройка, которую
+                стоит держать под контролем — особенно в сценариях приватности.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Kill Switch — страховка от секундных разрывов</h3>
+            <p>
+              Kill Switch срабатывает в момент, когда туннель дрогнул. Это тот самый “ремень безопасности”, который
+              незаметен, пока не спасает. На ноутбуках и в Wi-Fi это особенно полезно.
+            </p>
+          </div>
+        </section>
+
+        <section id="faq" class="section">
+          <h2>FAQ</h2>
+          <p>
+            Коротко, по делу — без мистики. Если хочется совсем без ручных действий, Норм VPN и VPNUS закрывают большинство сценариев в пару кликов.
+          </p>
+
+          <div class="faq">
+            <details>
+              <summary>Почему разные сайты открываются с разной скоростью при одном и том же VPN?</summary>
+              <p>
+                Скорость зависит от маршрута до конкретного сервиса: иногда ближний сервер даёт лучший отклик,
+                иногда — сервер с более “чистым” маршрутом. Переключение локации и протокола обычно решает это быстрее всего.
+              </p>
+            </details>
+
+            <details>
+              <summary>Что лучше для Windows: WireGuard или OpenVPN?</summary>
+              <p>
+                WireGuard чаще даёт выше скорость и стабильность. OpenVPN выигрывает там, где сеть капризная,
+                а провайдер любит “вмешиваться” в соединения.
+              </p>
+            </details>
+
+            <details>
+              <summary>Почему VPN подключился, а интернет “умер”?</summary>
+              <p>
+                Обычно виноваты DNS, остатки прокси, правила брандмауэра или конфликт сетевых настроек.
+                Вариант попроще: сменить сервер и режим в приложении, включить защиту DNS, перезапустить сеть.
+              </p>
+            </details>
+
+            <details>
+              <summary>Можно ли сделать так, чтобы VPN включался автоматически?</summary>
+              <p>
+                Да: автоподключение и выбор последней локации — нормальная история. Важно только включить Kill Switch,
+                чтобы случайный разрыв не показывал реальный IP.
+              </p>
+            </details>
+
+            <details>
+              <summary>Как выбрать локацию, чтобы снизить задержку?</summary>
+              <p>
+                Ближе — почти всегда лучше. Для игр полезнее сервер с хорошим маршрутом и стабильной связностью,
+                а не “самая далёкая страна ради красоты”.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <section class="internal-links">
+          <h3>Полезные статьи по теме</h3>
+          <div class="internal-links-grid">
+            <a href="/blog/vpn-security-privacy/" class="internal-link-card">
+              <h4>Безопасность и конфиденциальность</h4>
+              <p>Шифрование, политика без логов, Kill Switch, защита от утечек</p>
+            </a>
+            <a href="/blog/vpn-for-roblox/" class="internal-link-card">
+              <h4>VPN для Roblox</h4>
+              <p>Стабильная игра, локации, пинг и подключение</p>
+            </a>
+            <a href="/blog/vpn-news-trends/" class="internal-link-card">
+              <h4>Новости и тренды VPN</h4>
+              <p>Блокировки, рынок, технологии и что работает</p>
+            </a>
+            <a href="/blog/vpn-for-games/" class="internal-link-card">
+              <h4>VPN для игр</h4>
+              <p>Маршруты, скорость, задержка и устойчивость соединения</p>
+            </a>
+          </div>
+        </section>
       </article>
     </main>
+
     <footer>
       <div class="container">© 2026 Норм VPN. Все права защищены.</div>
     </footer>
+
     <div class="exit-banner" id="exit-banner">
       <div class="exit-banner-content">
         <button class="exit-banner-close" type="button" aria-label="Закрыть">×</button>
-        <h3>Не уходите без защиты!</h3>
-        <p>
-          Попробуйте Норм VPN бесплатно и убедитесь, насколько
-          комфортно и безопасно можно пользоваться интернетом.
-        </p>
-        <a href="https://t.me/normwpn_bot?start=partner_228691787">
+        <h3>Не уходите без защиты</h3>
+        <p>Подключение в пару кликов. Локации, режимы, инструкции — всё уже собрано в Telegram-ботах.</p>
+        <a href="https://t.me/normwpn_bot?start=partner_228691787" target="_blank" rel="noopener noreferrer">
           Получить 3 дня бесплатно
         </a>
       </div>
     </div>
-  
+
     <script>
       (function () {
         var banner = document.getElementById('exit-banner');
         if (!banner) return;
+
         var closeBtn = banner.querySelector('.exit-banner-close');
         var shown = false;
+
         function showBanner() {
           if (shown) return;
           banner.classList.add('show');
           shown = true;
         }
+
         if (closeBtn) {
           closeBtn.addEventListener('click', function () {
             banner.classList.remove('show');
           });
         }
+
         document.addEventListener('mouseleave', function (event) {
-          if (event.clientY <= 0) {
-            showBanner();
-          }
+          if (event.clientY <= 0) showBanner();
         });
       })();
     </script>
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106376756', 'ym');
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106376756', 'ym');
 
-        ym(106376756, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+      ym(106376756, 'init', {
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
+        ecommerce: 'dataLayer',
+        accurateTrackBounce: true,
+        trackLinks: true
+      });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/106376756" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+      <div>
+        <img src="https://mc.yandex.ru/watch/106376756" style="position: absolute; left: -9999px" alt="" />
+      </div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
   </body>
 </html>
